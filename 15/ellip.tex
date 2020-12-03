@@ -1,0 +1,25 @@
+\section{More about Weierstrass' Elliptic Functions; Quotients}
+\subsection{An Elliptic Curve}
+We have seen two general constructions of Riemann surfaces with genus $1$:
+The complex torus and the compactification of the Riemann surface associated with $w^2=z^3-z$.
+These two constructions has to be related, but how?
+Here, we shall prove that any complex torus is isomorphic to an algebraic construction.
+This is a corollary of Proposition \ref{elliptic_wp}.
+\begin{corollary}
+    Let $\mathbb C/\Lambda$ be a complex torus, then there are constants $g_2,g_3$ such that $\mathbb C/\Lambda$ is biholomorphic to a one-point compactification of the graph $X'=\{(x,y)\in\mathbb C^2:y^2=4x^3-g_2x-g_3\}$.
+\end{corollary}
+\begin{proof}[Sketch of proof]
+    Take $g_2,g_3$ exactly as in Proposition \ref{elliptic_wp}.
+    Turns out $X'$ can be compactified into a Riemann surface $X=X'\cup\{\infty\}$ with charts provided by coordinate projection.
+    Define $F:\mathbb C\to X$ via $z\mapsto(\wp(z),\wp^\prime(z))$ where $\wp=\wp_\Lambda$.
+    Now $\operatorname{Im}F\subset X$ by Proposition \ref{elliptic_wp} and $F$ is analytic as the charts are coordinate projections.
+    So via a quotient, we can use $F$ to induce $\Phi:\mathbb C/\Lambda\to X$.
+    It remains to show that $\Phi$ is a conformal equivalence.
+    As it is analytic, it suffices to show that it is bijective.
+    It is surjective as it is nonconstant and everything is compact.
+    To see it is injective, consider the period parallelogram centered at $0$, that is the parallelogram with vertices $(\omega_1+\omega_2)/2,(\omega_2-\omega_1)/2,(-\omega_1-\omega_2)/2,(\omega_1-\omega_2)/2$.
+    It suffices to show that $F$ is injective in the interior of $P$, which will imply injectivity of $\Phi$ in general due to the valency theorem.
+    Suppose $F(z)=F(z')$ for $z,z'\in P^\circ$, then $\wp(z)=\wp(z')$, so $z=\pm z'$ as $\wp$ is even and has degree $2$.
+    But also $\wp^\prime(z)=\wp^\prime(z')=\pm \wp^\prime(z)$ as $\wp$ is odd, so $z=z'$ as the zeros of $\wp^\prime$ are not in $P^\circ$.
+    This completes the proof.
+\end{proof}

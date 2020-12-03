@@ -1,0 +1,19 @@
+\subsection{The Classical Monodromy Theorem}
+\begin{theorem}[Classical Monodromy Theorem]
+    Let $D\subset\mathbb C$ be a domain and $(f,U)$ is a function element in $D$ that can be analytically continued along any path in $D$ starting in $U$.
+    If $(f,U)\approx_\alpha (g_1,V)$ and $(f,U)\approx_\beta(g_2,V)$ and $\alpha\simeq\beta$, then $g_1=g_2$ on $V$.
+\end{theorem}
+Therefore analytically continuing along a path only depends on the homotopy class of the path of continuation.
+\begin{proof}
+    Let $\tilde{\alpha},\tilde{\beta}$ be the lifts of $\alpha,\beta$ to $\mathcal G$ such that $\tilde{\alpha}(0)=[f]_{\alpha(0)}=\tilde{\beta(0)}$.
+    As $\alpha\simeq\beta$, we have $\tilde{\alpha}\simeq\tilde{\beta}$ by Theorem \ref{monodromy}.
+    Hence $\tilde{\alpha}(1)=\tilde{\beta}(1)$, which means $[g_1]_{\alpha(1)}=[g_2]_{\beta(1)}$, so $g_1,g_2$ coincides on some neighbourhood of $\alpha(1)=\beta(1)$, which implies $g_1=g_2$ on $V$ by the identity principle.
+\end{proof}
+\begin{corollary}
+    Let $D$ be a simply connected domain and $(f,U)$ a function element on $D$.
+    If $(f,U)$ can be analytically continued along every path in $D$ starting in $U$, then $(f,U)$ extends to an analytic function $f:D\to\mathbb C$.
+\end{corollary}
+\begin{proof}
+    Immediate.
+\end{proof}
+Nice.

@@ -1,0 +1,39 @@
+\subsection{Simply Periodic Functions}
+Our next goal is to classify meromorphic functions on other Riemann surfaces.
+Many Riemann surfaces we have described in the form $R=D/\sim$ where $D$ is a domain and $\sim$ is an equivalence relation.
+This is useful in the sense that functions on $R$ are automatically periodic on $D$ with respect to $\sim$.
+\begin{definition}
+    Let $f:\mathbb C\to\mathbb C_\infty$ be meromorphic,
+    A period of $f$ is a complex number $\omega\in\mathbb C$ such that $f(z+\omega)=f(z)$ for all $z\in\mathbb C$.
+\end{definition}
+Note that the periods of $f$ forms a additive subgroup $\Omega\le\mathbb C$.
+\begin{lemma}
+    Let $\Omega$ be the set of periods of a meromorphic function $f$ on $\mathbb C$, then one of the following holds:\\
+    (i) $\Omega=\{0\}$.\\
+    (ii) $\Omega=\langle \omega\rangle\cong\mathbb Z$ for $\omega\neq 0$.\\
+    (iii) $\Omega=\langle w_1,w_2\rangle\cong\mathbb Z^2$ where $\omega_1,\omega_2\neq 0,\omega_1/\omega_2\notin\mathbb R$.\\
+    (iv) $\Omega=\mathbb C$.
+\end{lemma}
+\begin{proof}
+    See example sheet.
+\end{proof}
+\begin{definition}
+    A meromorphic function $f$ on $\mathbb C$ whose group of periods contains $\langle\omega\rangle\cong\mathbb Z,\omega\neq 0$ is called simply periodic.
+\end{definition}
+\begin{example}
+    $\exp$ has $\Omega=\langle 2\pi i\rangle$.
+\end{example}
+Observe that $\exp$ is also a covering map.
+In fact,
+\begin{proposition}\label{simply_periodic}
+    If $f$ is a meromorphic function on $\mathbb C$ and the periods of $f$ contains an infinite cyclic subgroup $\langle\omega\rangle$, then there is a unique meromorphic function $\bar{f}$ on $\mathbb C_\star$ such that $f(z)=\bar{f}\circ\exp(2\pi iz/\omega)$.
+\end{proposition}
+\begin{proof}
+    Uniqueness is trivial.
+    For existence, we choose any branch of $\log$ and define $\bar{f}(w)=f(\omega\log(w)/(2\pi i))$ which does satisfy $\bar{f}\circ\exp(2\pi iz/\omega)=f$.
+    It remains to show that $\bar{f}$ is well-defined.
+    Suppose we have chosen a different branch of $\log$, then the function we obtained instead would be $\hat{f}=f(\omega(\log w+2\pi in)/(2\pi i))$ for some $n\in\mathbb Z$.
+    But this is just $\bar{f}(w)$ since $n\omega$ is a period of $f$.
+\end{proof}
+Therefore simply periodic functions are in one-to-one correspondence to functions on $\mathbb C_\star$.
+This is natural since $\mathbb C_\star\cong\mathbb C/\langle\omega\rangle$ conformally via $z\mapsto\exp(2\pi iz/\omega)$.

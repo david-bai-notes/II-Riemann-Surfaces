@@ -1,0 +1,95 @@
+\section{The Theory of Covering Spaces}
+\begin{definition}
+    Suppose $\pi:\tilde{X}\to X$ is a covering map and $\gamma:[0,1]\to X$ is a path.
+    A lift of $\gamma$ along $\pi$ is a path $\tilde{\gamma}:[0,1]\to\tilde{X}$ such that $\pi\circ\tilde{\gamma}=\gamma$.
+\end{definition}
+Obviously, lifts are not usually unique.
+\begin{example}
+    The function $\exp:\mathbb C\to\mathbb C_\star$ is a covering map.
+    Consider the path $\gamma:[0,1]\to \mathbb C$ representing the unit circle, i.e. $\gamma(t)=e^{2\pi it}$, then both $t\mapsto 2\pi it$ and $t\mapsto 2\pi i+2\pi it$ are lifts of $\gamma$.
+\end{example}
+An interesting observation is that although we exhibited two different lifts, they do start at different points.
+And it is indeed a correct intuition.
+\begin{proposition}[Uniqueness of Lifts]
+    Suppose $\tilde{\gamma}_1,\tilde{\gamma}_2$ are both lifts of $\gamma$ along a covering $\pi:\tilde{X}\to X$.
+    If $\tilde{\gamma}_1(0)=\tilde{\gamma}_2(0)$ then $\tilde{\gamma}_1=\tilde{\gamma}_2$.
+\end{proposition}
+\begin{proof}
+    Consider the set
+    $$I=\{t\in[0,1]:\tilde{\gamma}_1(t)=\tilde{\gamma}_2(t)\}$$
+    We shall show that it is both open and closed, which shows the proposition as $[0,1]$ is connected.
+    It is obviously closed as $\tilde{\gamma}_1,\tilde{\gamma}_2$ are continuous and $[0,1]^2$ is Hausdorff.
+    So it remains to show it is open.
+    Let $t\in I$.
+    As $\pi$ is a covering map, $\tilde{\gamma}_1(t)=\tilde{\gamma}_2(t)$ has a neighbourhood $\tilde{N}$ such that $\pi|_{\tilde{N}}$ is a homeomorphism.
+    As $\gamma$ is continuous, there is $\delta>0$ such that $\gamma(t-\delta,t+\delta)\in N$.
+    But for any $s$, $\pi\circ\tilde{\gamma}_1(s)=\gamma(s)=\pi\circ\tilde{\gamma}_2(s)$.
+    So pick any $s\in (t-\delta,t+\delta)$, we have
+    $$\tilde{\gamma}_1(s)=(\pi|_{\tilde{N}})^{-1}\circ\gamma(s)=\tilde{\gamma}_2(s)$$
+    Therefore $s\in I$.
+    This shows that $I$ is open, as desired.
+\end{proof}
+Now, even if $\pi$ is surjective, lifts may not exist.
+\begin{example}[Counterexample]
+    Consider $X=\mathbb C_\star,\tilde{X}=\mathbb R+i(-\pi,2\pi)$ and $\pi=\exp|_D$, but then we cannot lift the path $t\mapsto e^{2\pi it}$.
+\end{example}
+But note that the $\pi$ in the example above is not a regular covering map.
+In fact, a lift does exist if $\pi$ is regular.
+\begin{proposition}[Path-Lifting Lemma]
+    Let $\pi:\tilde{X}\to X$ be a regular covering map and $\gamma:[0,1]\to X$ is a path.
+    Suppose $\pi(\tilde{x})=\gamma(0)$, then there is a unique lift $\tilde\gamma$ of $\gamma$ such that $\tilde{\gamma}(0)=\tilde{x}$.
+\end{proposition}
+\begin{proof}
+    Suffices to show the existence.
+    Let
+    $$I=\{t\in [0,1]:\gamma|_{[0,t]}\text{ can be lifted to some }\tilde\gamma\text{ with }\tilde{\gamma}(0)=\tilde{x}\}$$
+    Again we will show that $I$ is both open and closed.\\
+    To see $I$ is closed, consider a sequence $t_n\to\tau$ where $t_n\in I$ for all $I$.
+    We shall show that $\tau\in I$.
+    As $\pi$ is regular, there is some open $U\ni\gamma(\tau)$ such that
+    $$\pi^{-1}(U)\cong\coprod_{\delta\in D}U_\delta$$
+    for some set $D$.
+    Throwing away finitely many terms we can assume $\gamma(t_n)\in U$ for any $t$, consequently $\tilde{\gamma}(t_n)$ are all in the same $U_\delta$.
+    Set $\tilde{\gamma}(\tau)=(\pi|_{U_\delta})^{-1}\circ\gamma(\tau)$ extends $\tilde{\gamma}$ continuous to $\tau$, so $\tau\in I$.\\
+    To see $I$ is open, let $\tau\in I$ and choose open $U\ni \gamma(\tau)$ such that
+    $$\pi^{-1}(U)\cong\coprod_{\delta\in D}U_\delta$$
+    for a set $D$.
+    There is a unique $\delta$ such that $\tilde{\gamma}(\tau)\in U_\delta$.
+    Choose $\epsilon>0$ such that $|t-\tau|<\epsilon\implies \gamma(t)\in U$.
+    So we want to extend $\tilde{\gamma}$ via $\tilde\gamma(t)=(\pi|_{U_\delta})^{-1}\circ\gamma(t)$ for $|t-\tau|<\epsilon$, which works.
+    Therefore $I$ is open, as required.
+\end{proof}
+\begin{definition}
+    Let $X$ be a topological space and $\alpha,\beta:[0,1]\to X$ paths with $\alpha(0)=\beta(0),\alpha(1)=\beta(1)$.
+    We say $\alpha,\beta$ are homotopic (or $\alpha\simeq\beta$) if there is a family of paths $(\alpha_s)_{s\in[0,1]}$ such that:\\
+    1. $\alpha_0=\alpha,\alpha_s(1)=\beta$.\\
+    2. $\alpha_s(0)=\alpha(0),\alpha_s(1)=\alpha(1)$ for any $s$.\\
+    3. The map $(t,s)\mapsto\alpha_s(t)$ is continuous.
+\end{definition}
+\begin{definition}
+    A topological space $X$ is simply connected if:\\
+    1. $X$ is path-connected.\\
+    2. Every pair of paths $\alpha,\beta:[0,1]\to X$ with the same endpoints are homotopic.
+\end{definition}
+\begin{remark}
+    Let $D\subset\mathbb C$ be a convex domain, then the formula
+    $$\alpha_s(t)=(1-s)\alpha(t)+s\beta(t)$$
+    gives a homotopy between any two paths $\alpha,\beta$ with same endpoints.
+\end{remark}
+\begin{example}
+    $\mathbb C$, the unit disk and half-plane are simply connected.
+\end{example}
+\begin{theorem}[Monodromy Theorem, aka Homotopy Lifting Lemma]\label{monodromy}
+    Let $\pi:\tilde{X}\to X$ be a covering map and $\alpha,\beta$ in $X$ be such that:\\
+    1. $\alpha\simeq\beta$ in $X$.\\
+    2. There are lifts $\tilde\alpha$ of $\alpha$ and $\tilde\beta$ of $\beta$ along the covering.\\
+    3. Every path $\gamma$ in $X$ with $\gamma(0)=\alpha(0)=\beta(0)$ has a lift $\tilde{\gamma}$ to $\tilde{X}$ with $\tilde{\gamma}(0)\tilde{\alpha}(0)=\tilde{\beta}(0)$.\\
+    Then $\tilde{\alpha}\simeq\tilde{\beta}$.
+    In particular, $\tilde{\alpha}\simeq\tilde{\beta}$.
+\end{theorem}
+\begin{proof}
+    See Algebraic Topology.
+\end{proof}
+\begin{note}
+    The requirements (ii) and (iii) are automatically satisfied if $\pi$ is regular.
+\end{note}

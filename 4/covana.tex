@@ -1,0 +1,50 @@
+\section{Examples of Conformal Structures; Analytic Functions}
+\subsection{Covering Maps and Analyticity}
+\begin{lemma}\label{covering_conformal}
+    If $\pi:\tilde{R}\to R$ is a covering map where $R$ is a Riemann surface, then there is a unique conformal structure on $\tilde{R}$ such that $\pi$ is analytic.
+\end{lemma}
+\begin{proof}
+    We construct an atlas on $\tilde{R}$ as follows:
+    For $p\in\tilde{R}$, as $\pi$ is a covering map, there is an open neighbourhood $\tilde{N}_p$ of $p$ such that $\pi|_{\tilde{N}_p}:\tilde{N}_p\to N_p$ is a homeomorphism for some neighbourhood $N(p)$ of $\pi(p)$.
+    Now there is a conformal structure on $R$, so we can pick a chart $(\phi_p,U_p)$ on $R$ such that $p\in U_p$.
+    Our desired chart is then $(\tilde{\phi}_p,\tilde{U}_p)$ where $\tilde{U}_p=(\pi|_{\tilde{N}_p})^{-1}(N_p\cap U_p)$ and $\tilde{\phi}_p=\phi_p|_{N_p\cap U_p}\circ\pi|_{\tilde{U}_p}$.
+    It is easy to see it is a chart.
+    The collection of all charts produced in this form is an atlas.
+    To see this, just observe that the transition function is
+    $$\tilde{\phi}_p\circ\tilde{\phi}_q^{-1}=\phi_p\circ\pi\circ\pi^{-1}\circ\phi_q^{-1}=\phi_p\circ\phi_q^{-1}$$
+    (with proper restrictions to local open sets) which is analytic as we got $\phi_p,\phi_q$ from another atlas.
+    So it extends to a conformal structure $\tilde{A}$ on $\tilde{R}$.\\
+    We shall show that $\pi$ is analytic in this choice of conformal structure.
+    Let $p\in\tilde{R}$ and choose chart $(\phi_p,U_p)$ in $R$ around $\pi(p)$ and chart $(\tilde{\phi}_p,\tilde{U}_p)$ in $\tilde{R}$ constructed from $(\phi_p,U_p)$ in the above way.
+    Then with proper restrictions,
+    $$\phi_p\circ\pi\circ\tilde{\phi}_p^{-1}=\phi_p\circ\pi\circ\pi^{-1}\circ\phi_p^{-1}=\operatorname{id}_{\mathbb C}$$
+    which is analytic.
+    We are then done by Lemma \ref{analytic_local}.\\
+    To see the uniqueness of this conformal structure, let $\tilde{B}$ be any conformal structure on $\tilde{R}$ such that $\pi$ is analytic.
+    Let $p\in\tilde{R}$, $(\psi,V)\in\tilde{B}$ a chart around $p$ and $(\phi_p,U_p)$ a chart around $f(p)$.
+    But then locally the transition function $\tilde\phi_p\circ\psi^{-1}=\phi_p\circ\pi\circ\psi^{-1}$ is analytic.
+    So by maximality $\tilde{B}=\tilde{A}$.
+\end{proof}
+\begin{example}
+    Consider the Riemann surface $R$ associated with $\log$ we considered earlier.
+    Let $f,\pi$ be the functions as usual.
+    As $\pi$ is a covering map, there is a unique way to make $R$ a Riemann surface by the preceding lemma where $\pi:R\to C_\star$ is analytic.
+    Furthermore, locally $f|_{U_{I(n)}}=f_{I(n)}\circ\pi$, so $f$ is analytic as well.\\
+    Furthermore, we know that there is a homeomorphism $f_{I(n)}:U_{I(n)}\to\tilde{V}_{I(n)}$ (where $\tilde{V}_I=\mathbb R+iI$) having $\exp|_{\tilde{V}_{I(U)}}$ as inverse.
+    Then $f_{I(n)}^{-1}$ agree wherever their domains intersect, so we can piece them together to give a conformal equivalence between $R$ and $\mathbb C$.
+\end{example}
+\begin{example}
+    Similar case happened with $R_k$ and $\sqrt[k]{\cdot}$.
+    Again $\pi$ induces a unique conformal structure on $R_k$ that makes it and $g$ analytic.
+    By the same argument as above, we get $g$ is a conformal equivalence.\\
+    Actually, we can even do better with this example.
+    Note that the singularities in $0$ and $\infty$ are removable by identifying $\hat{p}_k(0)=\hat{\pi}(0)=\hat{g}(0)=0$ and $\hat{p}_k(\infty)=\hat{\pi}(\infty)=\hat{g}(\infty)=\infty$ (where $\hat{g},\hat{p}_k,\hat{\pi}$ are our notation for $g,p_k,\pi$ with this extended domain and codomain).
+    This gives
+    \[
+        \begin{tikzcd}
+            \hat{R}_k=R_k\cup\{0,\infty\}\arrow{r}{\hat{g}}\arrow[swap]{dr}{\hat{\pi}}&\mathbb C_\infty\arrow{d}{\hat{p}_k}\\
+            &\mathbb C_\infty
+        \end{tikzcd}
+    \]
+    which is pretty nice except now $\hat{\pi}$ is not a covering map anymore.
+\end{example}

@@ -1,0 +1,40 @@
+\section{Applications of Riemann-Hurwitz}
+\subsection{Immediate Consequences}
+We can rearrange Riemann-Hurwitz to
+$$2g_R-2=n(2g_S-2)+\sum_{p\in R}(m_f(p)-1)$$
+where $g_R,g_S$ are the genera of $R,S$ respectively and $n$ is the degree of $f$.
+We can use it to calculate genera of Riemann surfaces.
+\begin{example}
+    Consider the compactification $\hat{R}$ of the Riemann surface associated with $w=\sqrt{z^3-z}$ equipped with a meromorphic function $\hat{\pi}:\hat{R}\to\mathbb C_\infty$.
+    We shall calculate the genus of $\hat{R}$ by Riemann-Hurwitz.
+    Take $f=\hat\pi$, then $n=\deg\hat\pi=2$ by valency theorem.
+    The branch points are $0,\pm 1,\infty$ and each of them has exactly $1$ preimage (branch points like this are called ``totally ramified''), hence has multiplicity $2$.
+    Plugging these information into Riemann-Hurwitz yields
+    $$2g_{\hat{R}}-2=2(0-2)+4(2-1)\implies g_{\hat{R}}=1$$
+    which is consistent with the fact that $\hat{R}$ is topologically a torus.
+\end{example}
+\begin{remark}
+    The correction term $\sum_{p\in R}(m_f(p)-1)$ is always even.
+    This is obvious but quite useful from time to time.
+    We obtained our compact Riemann surface in the above example from gluing $\hat{R}=R_1\cup_\Phi R_2$.
+    Imagine we know nothing about $\hat\pi^{-1}(\{\infty\})\subset R_2$ and write the correction term as
+    $$3(2-1)+\sum_{p\in\hat\pi^{-1}(\infty)}(m_{\hat\pi}(p)-1)=3+C,C=\sum_{p\in\hat\pi^{-1}(\infty)}(m_{\hat\pi}(p)-1)$$
+    If $\infty$ is not a ramification point, then $C=0$, which gives an odd correction point which is impossible.
+    Therefore it has to be the case that $\infty$ is a ramification point (which has to be totally ramified) and $C=1$.
+    Therefore we can go directly from there to obtain $g_{\hat{R}}=1$.
+    Hence, when $\deg f=2$, then we can obtain the branching at $\infty$ for free from this parity argument.
+\end{remark}
+\begin{remark}
+    In the case when $f$ is a covering map (aka unramified), then the correction term vanished, therefore $g_R-1=n(g_S-1)$.
+    There are three cases:\\
+    (i) If $g_S=0$, then $g_R-1<0$, which means actually $g_R=0,n=1$.
+    But degree $1$ maps have to be conformal equivalences, therefore $R\cong S$.
+    Also genus $0$ surfaces are simply the Riemann sphere, so $f$ is just a M\"obius transformation.\\
+    (ii) If $g_S=1$, then necessarily $g_R=1$, but then $n$ is not restricted.\\
+    (iii) If $g_S>1$, then either $g_R=g_S$ and $n=1$ (in which case $f$ is a conformal equivalence) or $g_R>g_S$ and $n>1$.
+\end{remark}
+\begin{example}
+    Consider the family of lattices $\Lambda_n=\langle n,i\rangle\le\mathbb C$ for $n\in\mathbb Z_{>0}$.
+    Then $\Lambda_n\le \lambda_1$ for all $n$ which induces a covering map $\mathbb C/\Lambda_n\to\mathbb C/\Lambda_1$ which has degree $n$.
+    Therefore when $g_S=1$ there is truly no restriction on the degree of $f$.
+\end{example}

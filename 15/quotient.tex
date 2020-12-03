@@ -1,0 +1,50 @@
+\subsection{Quotients of Riemann Surfaces}
+\begin{definition}
+    Let a group $G$ act by homeomorphism on a space $X$.
+    The action is called properly discontinuous if every compact $K\subset X$ has $\{g\in G:g(K)\cap K\neq\varnothing\}$ finite.\\
+    The action is free if for every $x\in X$ the stabiliser $\operatorname{Stab}_G(x)$ is trivial.
+\end{definition}
+\begin{example}
+    If $\Lambda$ is a lattice in $\mathbb C$, then the action of $\Lambda$ on $\mathbb C$ by translation is properly discontinuous and free.
+\end{example}
+\begin{lemma}
+    Let $G$ be a group acting properly discontinuously and freely on a Riemann surface $R$.
+    The quotient $G\backslash R$ is Hausdorff and the quotient map $\pi:R\to G\backslash R$ is a regular covering map.
+\end{lemma}
+\begin{proof}
+    For any $p,q\in R$ with $\pi(p)\neq\pi(q)$, as $R$ is Hausdorff and locally Euclidean, we can find open $U\ni p,V\ni q$ such that $\bar{U},\bar{V}$ are compact.
+    Then $K=\bar{U}\cap\bar{V}$ is also compact, so $\{g\in G:g(K)\cap K\neq\varnothing\}\supset\{g\in G:g(\bar{U})\cap\bar{V}\neq\varnothing\}$ is finite.
+    Say this set is $\{g_1,\ldots,g_n\}$.
+    Then for each $i$ there are disjoint open neighbourhoods $U_i\ni x$ and $V_i\ni g_iy$.
+    Now $U'=U\cap\bigcap_iU_i$ and $V'=V\cap\bigcap_ig_i^{-1}(V_i)$ are disjoint open neighbourhoods of $p,q$ with $GU'$ disjoint from $GV'$.
+    Hence as $\pi$ is open, $\pi(U')$ and $\pi(V')$ are the required disjoint open neighbourhoods of $\pi(p),\pi(q)$.\\
+    To see $\pi$ is a regular covering map, we use a similar argument.
+    For any $p\in R$, again take $U\ni p$ with compact closure $K=\bar{U}$ and let $\{1,g_1,\ldots,g_n\}$ be the set $\{g\in G:g(K)\cap K\neq\varnothing\}$.
+    As the action is free, $g_ix\neq x$ for each $i$, hence there exists disjoint open neighbourhoods $U_i\ni x$ and $V_i\ni g_ix$.
+    But then $U'=U\cap\bigcap_i(U_i\cap g_i^{-1}V_i)$ is evenly covered via $\pi$.
+    Hence $\pi$ is a regular covering map.
+\end{proof}
+\begin{proposition}
+    Let $R$ be a Riemann surface and let $G$ be a group acting freely and properly discontinuously by conformal equivalences on $R$.
+    Then the quotient $S=G\backslash R$ can be made a Riemann surface so that the quotient map $\pi:R\to S$ is analyic and a regular covering map.
+\end{proposition}
+\begin{proof}
+    It is obvious that $S$ is connected since $R$ is.
+    The preceding lemma shows that $S$ is Hausdorff.
+    The conformal structure on $S$ can be constructed analogously to what we did for the complex torus.
+\end{proof}
+\begin{theorem}
+    Let $R$ be a compact Riemann surface of genus $g_R\ge 2$ and suppose that a group $G$ acts freely and properly discontinuously on $R$ by conformal equivalences, then $G$ is finite and $|G|\le g_R-1$.
+\end{theorem}
+\begin{proof}
+    $S=G\backslash R$ is a Riemann surface and the quotient map $\pi:R\to S$ is an analytic covering map.
+    $\deg\pi=|G|$ by construction, so in particular $G$ is finite.
+    \footnote{Alternatively, just take $K=R$ in the definition of properly discontinuous action.}
+    Also $\pi$ is a covering map, so it has to be unramified, therefore Riemann-Hurwitz gives $g_R-1=|G|(g_S-1)$.
+    As $g_R\ge 2$, $g_S-1\ge 1$, consequently $g_R-1\ge |G|$.
+\end{proof}
+Note that this fails when $g_R=1$.
+\begin{example}[Non-example]
+    The torus $\mathbb C/\Lambda$ is a group as well, and it acts on itself by conformal equivalences via left translation $(z+\Lambda)(z_0+\Lambda)\mapsto (z+z_0)+\Lambda$.
+    Easily any finite subgroup of $\mathbb C/\Lambda$ acts on $\mathbb C/\Lambda$ properly continuously through the same action, but the size of these subgroups is unbounded.
+\end{example}

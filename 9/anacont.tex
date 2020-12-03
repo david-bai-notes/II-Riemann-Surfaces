@@ -1,0 +1,32 @@
+\section{Uniqueness of Analytic Continuation; Gluing}
+\subsection{Analytic Continuation Revisited}
+The space of germs contains information about the class of analytic functions that agree on a neighbourhood of some given point.
+Since we have seen that the space of germs admits a natural topological and analytical stucture, there should be some correlation between paths in this space and the analytic continuations along some paths in the original domain.
+\begin{theorem}
+    Let $(f,U),(g,V)$ be function elements on a domain $D\subset\mathbb C$ and $\gamma:[0,1]\to D$ be a path starting in $U$ and ending in $V$.
+    Then $(f,U)\approx_\gamma (g,V)$ iff $\gamma$ lifts to some $\tilde{\gamma}$ in (a component of) $\mathcal G$ joining $[f]_{\gamma(0)}$ and $[g]_{\gamma(1)}$.
+\end{theorem}
+\begin{proof}
+    Suppose $(f,U)\approx_\gamma(g,V)$, then we have $(f,U)=(f_1,U_1)\sim\cdots\sim (f_n,U_n)=(g,V)$ and a dissection $0=t_0<t_1<\cdots <t_{n-1}<t_n=1$ such that $\gamma([t_{i-1},t_i])\subset U_i$ for all $i\in\{1,\ldots,n\}$.
+    Now define a lift $\tilde{\gamma}$ of $\gamma$ to $\mathcal G$ via $\tilde{\gamma}(t)=[f_i]_{\gamma(t)}$ for $t\in[t_{i-1},t_i]$.
+    It is well-defined since $f_i|_{U_i\cap U_{i+1}}=f_{i+1}|_{U_i\cap U_{i+1}}$ as $(f_i,U_i)\sim (f_{i+1},U_{i+1})$ is a direct analytic continuation.
+    Also observe that on $[t_{i-1},t_i]$ we have $\tilde{\gamma}=(\pi|_{[f_i]_{U_i}})^{-1}\circ\gamma$ which is continuous.
+    Therefore $\tilde{\gamma}|_{[t_{i-1},t_i]}$ is continuous for all $i$, hence it is continuous.
+    Now for each $t\in[t_{i-1},t_i]$, $\pi\circ\tilde{\gamma}(t)=\pi([f_i]_{\gamma(t)})=\gamma(t)$, so $\tilde{\gamma}$ does lift $\gamma$.
+    Easily $\tilde{\gamma}(0)=[f_1]_{\gamma(0)}=[f]_{\gamma(0)}$ and $\tilde{\gamma}(1)=[f_n]_{\gamma(1)}=[g]_{\gamma(1)}$ by construction, as required.\\
+    Conversely, suppose such $\tilde\gamma$ exists, then every point $\tilde{\gamma}(t)$ has a neighbourhood $[f_t]_{U_t}$ where $(f_t,U_t)$ is a function element on $D$ and each $U_t$ is a disk.
+    Compactness of $[0,1]$ we can choose a finite collection of function elements $(f_1,U_1),\ldots,(f_n,U_n)$ among them and a dissection $0=t_0<t_1<\cdots <t_{n-1}<t_n=1$ such that $\tilde{\gamma}([t_{i-1},t_i])\subset [f_i]_{U_i}$.
+    Then as $\tilde\gamma$ is a lift of $\gamma$, $\gamma([t_{i-1},t_i])\subset U_i$ for any $i$.
+    Also for any $i$, $[f_{i-1}]_{\gamma(t_{i-1})}=\tilde{\gamma}(t_{i-1})=[f_i]_{\gamma(t_{i-1})}$, therefore $f_{i-1}$ and $f_i$ agrees on a neighbourhood of $\gamma(t_{i-1})\in U_{i-1}\cap U_i$.
+    But since $U_{i-1},U_i$ are disks, $U_{i-1}\cap U_i$ is connected and hence $f_{i-1}=f_i$ on $U_{i-1}\cap U_i$ by the identity principle.
+    Therefore it indeed gives the desired analytic continuation.
+\end{proof}
+\begin{corollary}
+    Let $\mathcal F$ be a complete analytic function on a domain $D\subset\mathbb C$, then
+    $$\mathcal G_{\mathcal F}=\bigcup_{(f,U)\in\mathcal F}[f]_U$$
+    is a path component of $\mathcal G$.
+\end{corollary}
+Therefore complete analytic functions on a domain $D\subset\mathbb C$ are equivalent to Riemann surfaces equipped with covering maps defined by the restriction of the forgetful map.
+\begin{definition}
+    The component $\mathcal G_{\mathcal F}$ is the Riemann surface associated to $\mathcal F$.
+\end{definition}

@@ -1,0 +1,50 @@
+\subsection{Harmonic Functions}
+By the open mapping theorem, a non-constant function $u:D\to\mathbb R$ where $D$ is a domain cannot be analytic.
+However, it can be harmonic
+\begin{definition}
+    Let $D\subset\mathbb C$ be a domain.
+    A smooth function $u:D\to\mathbb R$ is harmonic if
+    $$\nabla^2 u=\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}=0$$
+\end{definition}
+\begin{lemma}\label{harmonic_disk}
+    Consider a disk $D\subset\mathbb C$, a function $u:D\to\mathbb R$ is harmonic iff $u=\operatorname{Re}(f)$ for an analytic $f$ on $D$.
+\end{lemma}
+\begin{proof}
+    The ``if'' direction is trivial by the Cauchy-Riemann Equations.
+    The ``only if'' direction is exercise.
+\end{proof}
+\begin{definition}
+    Let $R$ be a Riemann surface.
+    A function $u\to\mathbb R$ is harmonic if for any chart $(\phi,U)$ on $R$ the composition
+    $$u\circ\phi^{-1}:U\to\mathbb R$$
+    is harmonic.
+\end{definition}
+\begin{lemma}
+    A real function $u$ on $R$ is harmonic iff for any $p\in R$ there exists one chart $(\phi,U)$ on $R$ such that $u\circ\phi^{-1}$ is harmonic.
+\end{lemma}
+\begin{proof}
+    The ``only if'' direction is trivial.
+    For the ``if'' direction, we know from Lemma \ref{harmonic_disk} that for any $p\in R$, there is a chart $(\phi,U)$ with $p\in U$ such that $u\circ\phi^{-1}=\operatorname{Re}f$ for some analytic $f$ on a disk contained in $\phi(U)$.
+    Hence for any chart $(\psi,V)$ and any $p\in V$, let $(\phi,U)$ be as above,
+    $$u\circ\psi^{-1}=(u\circ\phi^{-1})\circ(\phi\circ\psi^{-1})=\operatorname{Re}(f\circ(\phi\circ\psi^{-1}))$$
+    is harmonic near $p$.
+    Hence $u$ is harmonic.
+\end{proof}
+\begin{proposition}[Identity Principle for Harmonic Functions]
+    Let $u,v$ be harmonic functions on a Riemann surface $R$.
+    Then the set $\{p\in R:u(p)=v(p)\}$ is either $R$ or discrete.
+\end{proposition}
+\begin{proof}
+    Exercise.
+\end{proof}
+\begin{theorem}[Open Mapping Theorem for Harmonic Functions]
+    Any non-constant harmonic function $u$ on a Riemann surface $R$ is an open map.
+\end{theorem}
+\begin{proof}
+    Let $W\subset R$ be open and $p\in W$.
+    For small enough $U\ni p$ that is contained in $W$ there is a chart $\phi:U\to\mathbb C$ and analytic $f$ such that $u\circ\phi^{-1}=\operatorname{Re}f$.
+    The theorem then follows from the identity principle and open mapping theorem for analytic functions.
+\end{proof}
+\begin{corollary}
+    If $R$ is a compact Riemann surface, all harmonic functions on $R$ are constant.
+\end{corollary}

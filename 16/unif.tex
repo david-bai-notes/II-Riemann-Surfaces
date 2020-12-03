@@ -1,0 +1,41 @@
+\section{Uniformisation and its Consequences}
+\subsection{The Uniformisation Theorem}
+\begin{theorem}
+    Every simply connected Riemann surfaces is conformally equivalent to either $\mathbb C_\infty$, $\mathbb C$ or $\mathbb D=D(0,1)$.
+\end{theorem}
+\begin{proof}
+    Well beyond the scope of this course (duh!).
+\end{proof}
+Note that despite the existence of conformal equivalence, it might be very difficult to actually find one.
+\begin{remark}
+    The three items on this list are all conformally distinct.
+    $\mathbb C_\infty$ is obviously distinct from the two others since it is compact.
+    To see $\mathbb D$ and $\mathbb C$ are conformally distinct, just observe that there is no nonconstant analytic map $\mathbb C\to\mathbb D$ by Liouville's Theorem yet there is the (nonconstant) analytic natural inclusion $\mathbb C\hookrightarrow\mathbb C_\infty$.
+\end{remark}
+The uniformisation is extremely useful as it links together the topological properties and possible analytic structures of certain topological surfaces.
+\begin{corollary}
+    Any conformal structure on $S^2$ is conformally equivalent to $\mathbb C_\infty$.
+\end{corollary}
+\begin{proof}
+    $S^2$ is compact and simply connected.
+\end{proof}
+How about surfaces with positive genus?
+They are not simply connected, but we know that it has a nice universal cover (Algebraic Topology again!).
+\begin{theorem}
+    Every Riemann surface $R$ has a regular covering map $\pi:\tilde{R}\to R$ such that $\tilde{R}$ is simply connected.
+    Furthermore, there is a group $G$ acting freely and properly discontinuously by conformal equivalences on $\tilde{R}$ and the covering map descends to a conformal equivalence $G\backslash\tilde{R}\cong R$.
+\end{theorem}
+\begin{proof}
+    Algebraic Topology.
+\end{proof}
+Therefore
+\begin{corollary}
+    Every Riemann surface $R$ is conformally equivalent to a quotient $R\cong G\backslash\tilde{R}$ where $\tilde{R}$ is conformally equivalent to one of $\mathbb C_\infty,\mathbb C,\mathbb D$, and $G$ acts freely and properly discontinuously
+\end{corollary}
+\begin{proof}
+    Immediate.
+\end{proof}
+\begin{remark}
+    In fact, $G$ is just $\pi_1(R)$ acting by deck transformations.
+    Or in this context, $G$ is the collection of conformal equivalences $\phi:\tilde{R}\to\tilde{R}$ such that $\pi\circ\phi=\pi$.
+\end{remark}

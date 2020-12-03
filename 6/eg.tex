@@ -1,0 +1,39 @@
+\subsection{A Worked Example}
+We have already constructed Riemann surfaces associated to the multi-valued functions $\log$ and $\sqrt[k]{\cdot}$.
+Here we will treat another function in this way, namely $w=\sqrt{z^3-z}$.
+One possible approach to do it is to give a conformal structure on the graph $\{(w,z)\in\mathbb C^2:w^2=z^3-z\}$.
+This approach will not be discussed here since we are going to do it on example sheet.\\
+We will use our old idea of ``gluing'' again.
+As with $\log$, we need to consider some function elements.
+Start with $f(z)=z^3-z=z(z+1)(z-1)$.
+We know that $\sqrt{\cdot}$ has branches locally near any point but $0$ which corresponds to the roots $0,\pm 1$ of $f$.\\
+Let $D=\mathbb C\setminus([-1,0]\cup[1,\infty))$.
+We want to construct function elements $g$ on $D$ such that $g(z)^2=f(z)$.
+Fix any $z_0\in D$ and let $g(z_0)=w_0$ for a chosen $w_0^2=f(z_0)$.
+Now set
+$$g(x)=g(z_0)\exp\left( \frac{1}{2}\int_\gamma\frac{f^\prime(\zeta)}{f(\zeta)}\,\mathrm d\zeta \right)$$
+for any choice $\gamma$ of path from $z_0$ to $z$.
+To see the choice of the path $\gamma$ does not intervene the value of $g$, consider a loop $\gamma$.
+By the argument principle,
+$$\frac{1}{2\pi i}\int_\gamma\frac{f^\prime(\zeta)}{f(\zeta)}\,\mathrm d\zeta=\sum_{z_i\text{ zeros of }f}n(\gamma,z_i)-\sum_{p_j\text{ poles of }f}n(\gamma,p_j)$$
+where $n$ denote the winding number.
+In this particular case, this evaluates to $n(\gamma,0)+n(\gamma,-1)+n(\gamma,1)$.
+In example sheet, we have shown that $n(\gamma,1)=0$ and $n(\gamma,-1)=n(\gamma,0)$, hence this integral is an even integer, therefore
+$$\exp\left( \frac{1}{2}\int_\gamma\frac{f^\prime(\zeta)}{f(\zeta)}\,\mathrm d\zeta \right)=1$$
+This means $g$ is well-defined.
+It is fairly standard to show that $g$ is continuous since $f^\prime/f$ is continuous wherever relevant.
+It is also pretty clear that $g$ is analytic, since we can choose a local branch such that $\sqrt{\cdot}$ is analytic and $g(z)=\sqrt{f(z)}$.
+Now the choice of $w_0$ gives two branches $g_+,g_-$ of $g$, so we get the function elements $(g_+,D_+),(g_-,D_-)$ where $D_+$ and $D_-$ are both copies of $D$.
+Obviously, on the Riemann sphere $D$ is just the sphere removed two closed segments.
+This is homeomorphic to the cylinder $S^1\times\mathbb R$.
+So we want to figure out a way to glue this two cylinders corresonding to $D_+,D_-$ together along the branch cuts to make it the surface we wanted.
+For $z_0\in (-1,0)\cup(1,\infty)$, we have
+$$\lim_{z\to z_0^-}g_+(z)=\lim_{z\to z_0^+}g_-(z),\lim_{z\to z_0^+}g_+(z)=\lim_{z\to z_0^-}g_-(z)$$
+where $z\to z_0^+$ denotes the limit of approaching $z_0$ from the upper half-plane and $z\to z_0^-$ is approaching from the lower half-plane.
+This immediately tell us that we want to glue them together at the corresponding boundaries where the upper half-plane from one side is glued to the lower half-plane from the other side and leave $0,\pm 1,\infty$ alone.
+This gives our Riemann surface $R$ (with the obvious conformal structure) which is a torus with $4$ points removed.
+We see this via our geometrical intuition.
+We will later see a computational technique to identify these surfaces.\\
+Like in previous examples, we get some analytic functions with nice properties.
+$g_\pm$ defines an analytic map $g:R\to\mathbb C$ and the inclusion $D_\pm\hookrightarrow\mathbb C\setminus{0,\pm 1}$ gives a covering map (also analytic) $\pi:R\to\mathbb C$.
+Also, locally (hence globally) we have $g(p)^2=f\circ\pi(p)=\pi(p)^3-\pi(p)$.

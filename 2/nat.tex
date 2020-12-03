@@ -1,0 +1,46 @@
+\section{Natural Boundary; A Gluing Construction; Roots}
+\subsection{Natural Boundary}
+Sometimes, it is impossible to do analytic continuation.
+Write $\mathbb D=D(0,1)$ and $\mathbb T=\partial\mathbb D=S^1$.
+Consider a power series $f(z)=\sum_na_nz^n$ with radius of convergence $1$.\\
+We say $z_0\in\mathbb T$ is regular if there is a neighbourhood $U$ of $z_0$ such that there exists a function element $(g,U)$ such that $f|_{U\cap\mathbb D}=g|_{U\cap\mathbb D}$.
+A point that is not regular is singular.
+Easily, the set of regular points is open in $\mathbb T$, so the set of singular points has to be closed.
+There are something to beware of which are illustrated in the example below.
+\begin{example}
+    Consider $f(z)=\frac{1}{1-z}=\sum_{n\ge 0}z^n$.
+    We know that the set of singular point is just $\{1\}$.
+    However, the power series evaluated at $-1$ does not converge.
+    So a regular point needs not guarantee that the power series converge there.
+\end{example}
+\begin{example}
+    Consider the power series
+    $$g(z)=\sum_{n\ge 2}\frac{z^n}{n(n-1)}$$
+    Then the series converges at $z=1$, but $1$ is not regular for $g$ because it is singular for $f=g^{\prime\prime}$.
+\end{example}
+The moral od the examples is whether or not a point is regular does not relate directly to whether or not the power series converges there.
+\begin{proposition}
+    If a power series $f(z)=\sum_{n\ge 0}a_nz^n$ has radius of convergence $1$, then some point of $\mathbb T$ is singular.
+\end{proposition}
+\begin{proof}
+    Just use the compactness of $\mathbb T$.
+\end{proof}
+\begin{definition}
+    If every point of $\mathbb T$ is singular, we say $\mathbb T$ is the natural boundary of $f$.
+\end{definition}
+\begin{remark}
+    We can extend this definition to other simple curves in $\mathbb C_\infty$.
+\end{remark}
+\begin{example}
+    Consider the function $f(z)=\sum_{n\ge 0}z^{n!}$.
+    We shall show that $\mathbb T$ is its natural boundary.
+    It suffices to show any point in the form $\omega=e^{2\pi ip/q}$ is singular, where $p,q\in\mathbb Z,q\neq 0$.
+    Indeed, fix such an $\omega$ with corresponding $p,q$, then for $r\in(0,1)$,
+    $$f(r\omega)=\sum_{n=0}^{q-1}r^{n!}\omega^{n!}+\sum_{n\ge q}r^{n!}$$
+    But the second term definitely converge.
+    To see this, we observe that for any $M$,
+    $$\lim_{r\to 1}\sum_{n=q}^{M+q}r^{n!}=M+1\implies \sum_{n=q}^{M+q}r^{n!}>M$$
+    for $r$ sufficiently close to $1$.
+    So the second term converges.
+    Yet the first term is bounded, therefore $f(r\omega)\to\infty$ as $r\to1$, so $\omega$ has to be singular at $\omega$.
+\end{example}

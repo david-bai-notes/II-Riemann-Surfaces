@@ -1,0 +1,30 @@
+\subsection{Analytic Maps}
+\begin{definition}
+    Let $R$ and $S$ be Riemann surfaces.
+    A continuous map $f:R\to S$ is analytic or holomorphic if for any chart $(\phi,U)$ on $R$ and $(\psi,V)$ on $S$, the map $\psi\circ f\circ \phi^{-1}$ is analytic on $\phi(U\cap f^{-1}(V))$.
+\end{definition}
+\begin{lemma}\label{analytic_local}
+    A continuous map $f:R\to S$ of Riemann surfaces is analytic iff for each $p\in R$, there is a chart $\phi_p,U_p$ on $R$ with $p\in U_p$ and a chart $(\psi_p,V_p)$ on $V$ with $f(p)\in V_p$ such that $\psi_p\circ f\circ \phi_p^{-1}$ is analytic on $\phi_p(U_p\cap f^{-1}(V_p))$
+\end{lemma}
+The key point of the proof is basically that the function we want to be analytic can be written as a composition of local analytic functions composed with transition maps.
+\begin{proof}
+    The ``only if'' direction is immediate.
+    For the ``if'' direction, given charts $(\phi,U)$ on $R$ and $(\psi,V)$ on $S$, it suffices to show that $\psi\circ f\circ\phi^{-1}$ is analytic at $\phi(p)$ for any $p\in U\cap f^{-1}(V)$.
+    We know from hypothesis that there is some charts $(\phi_p,U_p)$ on $R$ and $(\psi_p,V_p)$ on $S$ with $p\in U_p,f(p)\in V_p$ and $\psi_p\circ f\circ\phi_p^{-1}$ is analytic on $\phi_p(U\cap f^{-1}(V))$, hence in particular at $\phi_p(p)$.
+    Hence
+    $$\psi\circ f\circ\phi^{-1}=(\psi\circ\psi_p^{-1})\circ(\psi_p\circ f\circ\phi_p^{-1})\circ (\phi_p\circ\phi^{-1})$$
+    is analytic at $\phi(p)$.
+\end{proof}
+\begin{lemma}\label{analytic_compose}
+    If $f:R\to S$ and $g:S\to T$ are analytic, so is $g\circ f:R\to T$.
+\end{lemma}
+\begin{proof}
+    Simple corollary of Lemma \ref{analytic_local}.
+\end{proof}
+\begin{definition}
+    A conformal equivalence or biholomorphism is an analytic bijection of Riemann surfaces with analytic inverse.
+\end{definition}
+It is an equivalence relation by Lemma \ref{analytic_compose}.
+\begin{example}
+    The map $f:\mathbb C\to\bar{\mathbb C}$ with $z\mapsto \bar{z}$ is a conformal equivalence.
+\end{example}

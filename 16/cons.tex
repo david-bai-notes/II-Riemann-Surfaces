@@ -1,0 +1,26 @@
+\subsection{Consequences of Uniformisation}
+\begin{corollary}
+    If $R$ is a compact Riemann surface with genus at least $2$, then it is uniformised by $\mathbb D$.
+\end{corollary}
+\begin{proof}
+    It cannot be uniformised by $\mathbb C$ or $\mathbb C_\infty$.
+\end{proof}
+\begin{corollary}[Riemann Mapping Theorem]
+    If $D\subsetneq\mathbb C$ is a simply connected domain, then $D$ is conformally equivalent to $\mathbb D$.
+\end{corollary}
+\begin{proof}
+    We only have to show that $D$ is not conformally equivalent to $\mathbb C_\infty$ or $\mathbb C$.
+    It certainly cannot be conformally equivalent to $\mathbb C_\infty$ since $D$ is not compact.
+    Suppose $f$ is a conformal equivalence from $\mathbb C$ to $D$.
+    Casorati-Weierstrass shows that the singularity of $f$ at $\infty$ is not essential (as $f$ has to be injective).
+    So $\infty$ is either removable or a pole, therefore $f$ extends to $\bar{f}:\mathbb C_\infty\to D\cup\{\bar{f}(\infty)\}\subset\mathbb C_\infty$.
+    But now $\mathbb C_\infty$ is compact, so $\bar{f}:\mathbb C_\infty\to\mathbb C_\infty$ is surjective, hence $\bar{f}(\infty)=\infty$ and thus $D=\mathbb C$, contradiction.
+\end{proof}
+\begin{corollary}[Picard's Theorem]
+    Any analytic function $\mathbb C\to\mathbb C\setminus\{0,1\}$ is constant.
+\end{corollary}
+Of course we can replace $\{0,1\}$ by any two distinct points in $\mathbb C$.
+\begin{proof}
+    $\mathbb C\setminus\{0,1\}$ is uniformised by $\mathbb D$ by Example Sheet.
+    The statement then follows from the lifting lemma.
+\end{proof}

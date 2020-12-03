@@ -1,0 +1,41 @@
+\section{Riemann Surfaces; Analytic Maps}
+\subsection{Covering Maps}
+In previous sections, we have seen the way of realising the complex logarithm by constructing functions $f,\pi:R\to\mathbb C$ satisfying the $\exp\circ f=\pi$.
+That is, the diagram
+\[
+    \begin{tikzcd}
+        R\arrow{r}{f}\arrow[swap]{dr}{\pi}&\mathbb C\arrow{d}{\exp}\\
+        &\mathbb C_\star
+    \end{tikzcd}
+\]
+Sadly, $\pi$ is not exactly a homeomorphism, but it is the next best thing.
+\begin{definition}
+    Let $\tilde{X},X$ be path-connected Hausdorff topological spaces.
+    A covering map $\pi:\tilde{X}\to X$ is a local homeomorphism.
+    That is, each $\tilde{x}\in\tilde{X}$ has an open neighbourhood $\tilde{U}$ such that $\pi|_{\tilde{U}}$ is a homoemorphism onto its image.
+\end{definition}
+\begin{definition}
+    A covering map $\pi:\tilde{X}\to X$ is regular if for each $x\in X$ there is an open neighbourhood $U$ of $x$ and a discrete set $\Delta_x$ such that $\pi^{-1}(U)\cong U\times\Delta_x$ and the diagram
+    \[
+        \begin{tikzcd}
+            \pi^{-1}(U)\arrow{r}{\cong}\arrow[swap]{dr}{\pi}&U\times\Delta_x\arrow{d}{(u,\delta)\mapsto u}\\
+            &U
+        \end{tikzcd}
+    \]
+    commutes.
+\end{definition}
+In particular, $\pi|_{\pi^{-1}(U)}$ must has image $U$.
+A useful and non-confusing way of taking $U\times\Delta_x$ is to think of it as a disjoint union of copies of $U$.
+\begin{example}
+    1. The map $\pi:R\to\mathbb C$ we defined when treating $\log$ is a regular convering map as
+    $$\pi^{-1}(U_{I(n)})=\coprod_{m\equiv n\pmod{4}}U_{I(m)}\cong U_{I(n)}\times\mathbb Z$$
+    2. For each open interval $I\subset\mathbb R$, write
+    $$\tilde{V}_I=\mathbb R+iI=\{x+iy:x\in\mathbb R,y\in I\}$$
+    As long as the length of $I$ is at most $2\pi$, the exponential function restricts to a homeomorphism $\tilde{V}_I\to U_I$ with the obvious inverse obtained by taking a branch of $\log$.
+    So
+    $$\exp^{-1}(U_{I(n)})=\coprod_{m\equiv n\pmod{4}}\tilde{V}_{I(m)}\cong U_{I(n)}\times\mathbb Z$$
+    which means $\exp:\mathbb C\to\mathbb C_\star$ is a covering map.\\
+    3. (non-example) Consider $\pi:\mathbb D\to\mathbb C$ which is obviously a covering map and $z\in\mathbb T$ with a neighbourhood $U\ni z$, then $\pi^{-1}(U)=U\cap\mathbb D$.
+    But then the image of $\pi|_{U\cap\mathbb D}$ is never $U$, so $\pi$ is not regular.\\
+    4. The map $\pi:R_k\to\mathbb C_\star$ we constructed for $\sqrt[k]{\cdot}$ is also regular.
+\end{example}

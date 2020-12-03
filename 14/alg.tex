@@ -1,0 +1,26 @@
+\subsection{An Algebraic Relation}
+Although $\wp_\Lambda$ is so far just an example of an elliptic function, it will be the key to classify all of them.
+First, we relate $\wp_\Lambda^\prime$ to $\wp_\Lambda$ algebraically.
+\begin{proposition}\label{elliptic_wp}
+    There exists constant $g_2,g_3\in\mathbb C$, depending only on $\Lambda$, such that
+    $$(\wp^\prime)^2=4\wp^3-g_2\wp-g_3$$
+    where $\wp=\wp_\Lambda$.
+\end{proposition}
+\begin{proof}
+    Near $0$, we have $\wp(z)=z^{-2}+az^2+o(z^4)$ for some constant $a$ as $\wp$ is even and looks like $z^{-2}$ near $0$.
+    So $\wp(z)^3=z^{-6}+f(z)$ for some analytic $f$.
+    Differentiating this Laurent series gives $\wp^\prime(z)=-2z^{-3}+2az+o(z^3)$, therefore $\wp^\prime(z)^2=4z^{-6}-8az^{-2}+g(z)$ for some analytic $g$.
+    These would give
+    $$\wp^\prime(z)^2=4\wp(z)^3-8az^{-2}-h(z)$$
+    where $h$ is analytic.
+    Setting $g_2=8a$ gives $(\wp^\prime)^2-4\wp^3+g_2\wp$ is analytic, has no poles, and doubly periodic, hence constant.
+    Setting this constant as $-g_3$ completes the proof.
+\end{proof}
+These constants $g_2,g_3$ actually relates to the branch points $e_1,e_2,e_3$.
+\begin{remark}
+    When $z\in (1/2)\Lambda\setminus\Lambda$, we have $\wp^\prime(z)=0$ and $\wp(z)=e_i$ for some $i$.
+    Then the preceding proposition means that $0=4e_i^3-g_2e_i-g_3$, so $e_1,e_2,e_3$ are exactly the three roots of $4z^3-g_2z-g_3$.
+    In particular, $e_1+e_2+e_3=0$.
+    Conversely, we can rewrite the relation as
+    $$\wp^\prime=4(\wp-e_1)(\wp-e_2)(\wp-e_3)$$
+\end{remark}

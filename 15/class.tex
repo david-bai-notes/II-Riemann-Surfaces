@@ -1,0 +1,27 @@
+\subsection{Classification of Elliptic Functions}
+We already classified the meromorphic functions on $\mathbb C_\infty$.
+Remarkably, we can do something similar for the torus $\mathbb C/\Lambda$.
+\begin{theorem}
+    Let $f$ be an elliptic functions with periods $\Lambda$.
+    There exists rational functions $Q_1,Q_2$ such that
+    $$f(z)=Q_1(\wp(z))+Q_2(\wp(z))\wp^\prime(z)$$
+    where $\wp=\wp_\Lambda$.
+    Furthermore, $f$ is even, then $Q_2=0$.
+\end{theorem}
+\begin{proof}
+    First assume $f$ is even.
+    Now $f,\wp$ both have finitely many branch points by compactness.
+    So we may choose distinct $c,d\in\mathbb C$ which are not branch points of $f,\wp$.
+    Now consider the function $z\mapsto (f(z)-c)/(f(z)-d)$ which is analytic (as it is the composition of $f$ with a M\"obius transformation), even, and has simple zeros and poles not at ramification points of $\wp$.
+    Note that we can invert M\"obius transformations nicely, therefore we can WLOG assume that $f$ has these properties.
+    Since $f$ is even, the zeros of $f$ can be written as $\{\pm a_1,\ldots,\pm a_m\}$ where $a_i\neq\pm a_j$ for $i\neq j$.
+    Likewise we can write the poles of $f$ as $\{\pm b_1,\ldots,\pm b_n\}$.
+    We can write down an elliptic function with the same zeros and poles, namely
+    $$g(z)=\frac{(\wp(z)-\wp(a_1))\cdots (\wp(z)-\wp(a_m))}{(\wp(z)-\wp(b_1))\cdots (\wp(z)-\wp(b_n))}$$
+    So $f/g$ is elliptic but does not have any zeros or poles, therefore is constant.
+    The claim follows.\\
+    If $f$ is odd, then $f(z)/\wp^\prime(z)$ is even hence $f$ can be written as the desired form as well by the previous part.
+    For general $f$, simply write it as the sum of odd and even parts
+    $$f(z)=\frac{f(z)+f(-z)}{2}+\frac{f(z)-f(-z)}{2}$$
+    which completes the proof.
+\end{proof}

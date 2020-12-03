@@ -1,0 +1,23 @@
+\subsection{The Riemann-Hurwitz Theorem}
+\begin{theorem}[Riemann-Hurwitz]
+    Let $f:R\to S$ be any non-constant analytic map of compact Riemann surfaces, then
+    $$\chi(R)=\deg(f)\chi(S)-\sum_{p\in R}(m_f(p)-1)$$
+\end{theorem}
+\begin{remark}
+    As $R$ is compact, the sum only has finitely many nonzero terms.
+\end{remark}
+\begin{proof}[Sketch of proof]
+    As in the proof of the valency theorem, each $q\in S$ has a ``power neighborhood'' $U$ where $f$ restricts to a union of power maps on $f^{-1}(U)$.
+    By compactness, there is a finite open cover $\{U_1,\ldots,U_k\}$ of $S$ where each $U_i$ is a ``power neighbourhood'' of $f$.
+    In particular, the number of branch points is finite.
+    We can subdivide a triangulation on $S$ so that we can eventually reach a triangulation such that each triangle has at most $1$ branch point.
+    We can further subdivide such that each branch point is a vertex.
+    Continue to subdivide so that each triangle is contained in some $U_i$.
+    Now the preimage of this eventual triangulation forms a triangulation of $R$.
+    Let $n=\deg f$ and $V_R,E_R,F_R,V_S,E_S,F_S$ are exactly what you think they mean.
+    Then, intuitively, $F_R=nF_S,E_R=nE_S$ while
+    $$|f^{-1}(\{q\})|=n-\sum_{p\in f^{-1}(\{q\})}(m_f(p)-1)$$
+    Summing up,
+    $$V_R=nV_S-\sum_{q\in S}\sum_{p\in f^{-1}(\{q\})}(m_f(p)-1)=nV_S-\sum_{p\in R}(m_f(p)-1)$$
+    which implies the identity.
+\end{proof}

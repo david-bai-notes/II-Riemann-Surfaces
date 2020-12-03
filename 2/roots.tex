@@ -1,0 +1,16 @@
+\subsection{Complex Roots}
+Consider the $k^{th}$ power map $p_k:z\mapsto z^k$.
+We can ``invert'' it by $\sqrt[k]{z}=\exp(k^{-1}\log z)$.
+This multi-valued function can be analysed analogously to how we analyse $\log$.
+Take $I(n)=((n-1)\pi/2,(n+1)\pi/2)$ as usual and $U_{I(n)}$ as before equipped with the same $f_{I(n)}:U_{I(n)}\to\mathbb C$ we did for $\log$.
+Then consider $g_{I(n)}(z)=\exp(k^{-1}f_{I(n)}(z))$ and the function elements $G_{I(n)}=(g_{I(n)},U_{I(n)})$.
+Now $G_{I(n)}$ only depends on $n\bmod k$, so WLOG we can think of $n\in\mathbb Z/k\mathbb Z$.
+Everything else is similar to what we did before, and we can get $G_{I(n)}\sim G_{I(m)}$ iff $n-m\equiv 0,\pm 1\pmod{k}$.
+Furthermore, a similar gluing constructio defines a path-connected Hausdorff space $R_k$ and maps
+\[
+    \begin{tikzcd}
+        R_k\arrow{r}{g}\arrow[swap]{dr}{\pi}&\mathbb C_\star\arrow{d}{p_k}\\
+        &\mathbb C_\star
+    \end{tikzcd}
+\]
+So $g$ gives what we want from the $k^{th}$ root.

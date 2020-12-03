@@ -1,0 +1,129 @@
+\section{Analytic and Meromorphic Functions}
+We have seen previously that there can be some multivalued functions in $\mathbb C$ carries important meanings.
+Most important examples being $\log$ and $\sqrt[m]{\cdot}$.
+What do we really mean by these multivalued functions?
+When we evaluate them, we always have to choose a branch cut, but it does not capture the relationship between different branch cuts.
+We shall try to find a way to characterise these functions in a proper way that realises their properties as they deserve.
+\subsection{Analytic Functions and their Zeros}
+\begin{definition}
+    A domain is an open, connected subset $D\subset\mathbb C$.
+\end{definition}
+\begin{example}
+    Open disks, annuli, punctured disks are domains.
+\end{example}
+\begin{definition}
+    Let $D\subset\mathbb C$ be a domain.
+    A function $f:D\to\mathbb C$ is holomorphic or analytic if either it is $\mathbb C$-differentiable everywhere on $D$ or it has a local Taylor series around every point in $D$.
+\end{definition}
+We know the two criteria above are equivalent from discussions back in IB Complex Analysis.
+\begin{proposition}
+    Let $f:D\to\mathbb C$ be an analytic functions on a domain.
+    If $f(z_0)=0$, then either $f$ is identically zero or nowhere zero on a punctured disk centering at $z_0$.
+\end{proposition}
+\begin{proof}
+    Obvious and already discussed in Complex Analysis, but let's do it again.
+    Consider the Taylor series of $f$ in a neighbourhood $U$ of $z_0$.
+    So for $z\in U$ we have
+    $$f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n$$
+    If $f$ is not identically zero, then we can choose minimal $m$ such that $a_m\neq 0$, so $f(z)=(z-z_0)^mg(z)$ where
+    $$g(z)=\sum_{n=0}^\infty a_{m+n}(z-z_0)^n\neq 0$$
+    is nonzero at $z_0$, hence is nowhere zero in a punctured disk around $z_0$ in $U\subset D$ by continuity.
+    $f$ is then nowhere zero in the same punctured disk.
+\end{proof}
+\begin{corollary}[Identity Principle]
+    Let $f,g$ be analytic functions defined on a domain $D\subset\mathbb C$.
+    If the subspace $\{z\in D|f(z)=g(z)\}$ is not discrete, then $f\equiv g$ on $D$.
+\end{corollary}
+\begin{proof}
+    Immediate.
+\end{proof}
+\subsection{Meromorphic Functions and Singularities}
+\begin{definition}
+    A function $f$ defined on a punctured disk around $z_0$ is said to have a isolated singularity at $z_0$.
+\end{definition}
+\begin{proposition}
+    If an analysic function $f$ has an isolated singularity at $z_0$, then $f$ has a Laurent series
+    $$f(z)=\sum_{n=-\infty}^\infty a_n(z-z_0)^n$$
+    on a punctured disk around $z_0$.
+\end{proposition}
+\begin{proof}
+    Complex Analysis.
+\end{proof}
+\begin{definition}
+    If $a_n=0$ for $n<0$, then $z_0$ is said to be a removable singularity of $f$.\\
+    If $a_n=0$ for $n<-m<0$ and $a_{-m}\neq 0$, then we say $z_0$ is a pole of order $m$.\\
+    Otherwise, we say $z_0$ is an essential singularity.
+\end{definition}
+\begin{theorem}
+    If $f$ is bounded near $z_0$, then $z_0$ has to be a removable singularity.
+\end{theorem}
+\begin{proof}
+    Complex Analysis.
+\end{proof}
+\begin{theorem}[Casorati-Weierstrass]
+    $z_0$ is an essential singularity iff $f(U)$ is dense in $\mathbb C$ for any punctured neighbourhood of $z_0$.
+\end{theorem}
+\begin{proof}
+    Complex Analysis.
+\end{proof}
+\begin{definition}
+    If a holomorphic function $f:D\setminus A\to\mathbb C$ for some domain $D$ and discrete $A$ has poles at the points of $A$, then $f$ is said to be meromorphic.
+\end{definition}
+\begin{example}
+    The function $f(z)=1/(e^{1/z}-1)$ is meromorphic where one takes $D$ to be the open upper half-plane and $A=\{1/(2\pi in):n\in\mathbb N\}$.
+    In particular, the poles are all simple (i.e. of order $1$).\\
+    Note that the function can be extended to the whole of $\mathbb C$ except at the discrete set $\{1/(2\pi in):n\in\mathbb Z\setminus\{0\}\}\cup\{0\}$, which contains $0$ as an essential singularity and others as simple poles.
+\end{example}
+\subsection{Analytic Continuation}
+\begin{definition}
+    A function element $F=(f,U)$ on a domain $D$ consists of a subdomain $U\subset D$ and an analytic function $f:U\to\mathbb C$.
+\end{definition}
+\begin{lemma}[Direct Analytic Continuation]
+    Let $(f,U),(g,V)$ are function elements such that $U\cap V\neq\varnothing$ and $f=g$ on $U\cap V$, then $f$ determines $g$.
+\end{lemma}
+\begin{proof}
+    Identity Principle.
+\end{proof}
+We write $(f,U)\sim (g,V)$ for direct analytic continuation.
+\begin{definition}
+    Analytic continuation is a sequence of iteration of direct analytic continuations that get from one function element to another.
+    We write $(f,U)\approx (g,V)$ in this case.
+\end{definition}
+\begin{remark}
+    $\approx$ is an equivalence relation.
+\end{remark}
+\begin{definition}
+    A $\approx$-equivalence class $\mathcal F$ of function elements on a domain $D$ is called a complete analytic function on $D$.
+\end{definition}
+\subsection{The Complex Logarithm}
+Let $\mathbb C_\star=\mathbb C\setminus\{0\}$.
+We want to invert the exponential function $\exp:\mathbb C\to\mathbb C_\star$, but $\exp$ is not injective on $\mathbb C$.
+We used to see $\log$ as a multivalued function to deal with this problem, but in fact, we can see it as a complete analytic function on $\mathbb C_\star$.\\
+Indeed, for $(\alpha,\beta)\subset\mathbb R$ with $|\alpha-\beta|<2\pi$, we can define
+$$U_{(\alpha,\beta)}=\{re^{i\theta}|r>0,\alpha<\theta<\beta\},f_{(\alpha,\beta)}(z)=\log r+i\theta,r=|z|,\theta\in (\alpha,\beta)$$
+Then $F_{(\alpha,\beta)}=(f_{(\alpha,\beta)},U_{(\alpha,\beta)})$ is a collection of function elements.
+Let $I(n)=((n-1)\pi/2,(n+1)\pi/2)$ for $n\in\mathbb Z$.
+\begin{proposition}
+    $F_{I(n)}\sim F_{I(m)}$ iff $|m-n|\le 1$.
+\end{proposition}
+\begin{proof}
+    Just do a case analysis based on $m-n\bmod 4$.
+\end{proof}
+\begin{corollary}
+    $F_{I(m)}\approx F_{I(n)}$ for any $m,n\in\mathbb Z$.
+\end{corollary}
+\begin{proof}
+    Immediate.
+\end{proof}
+So this characterises a complete analytic function that is the complex logarithm.
+\begin{remark}
+    We know that $f_{I(0)}(1)=0$ but $f_{I(4)}(1)=2\pi i$, so analytic continuation in this way is not unique.
+    But we have ``pasted'' them together to make it a complete analytic function.
+\end{remark}
+\begin{definition}
+    Let $\gamma:[0,1]\to D$ be a path.
+    We say $(f,U)\approx_\gamma (g,V)$ if there is some $0=t_0<t_1<\cdots<t_n=1$ and function elements $(f=f_0,U=U_0),(f_1,U_1),\ldots,(g=f_{n+1},V=U_{n+1})$ such that $(f_i,U_i)\sim (f_{i+1},U_{i+1})$ for $i=0,\ldots,n$ and $\gamma(t_i)\in U_i\cap U_{i+1}$.
+    This is called analytic continuation along a path.
+\end{definition}
+Analytic continuation along a path has the desired uniqueness property.
+This fact is known as the Classical Monodromy Theorem.

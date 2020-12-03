@@ -1,0 +1,65 @@
+\section{Weierstrass' Elliptic Functions}
+We shall explore the definition and properties of the Weierstrass $\wp$-functions, also known as Weierstrass' elliptic functions.
+\subsection{The Definition}
+We know that a non-constant elliptic function has degree at least $2$.
+The Weierstrass $\wp$-function on a lattice is a elliptic function that behaves like $z\mapsto z^{-2}$ near any lattice point.
+\begin{definition}
+    Let $\Lambda$ be a lattice in $\mathbb C^2$.
+    The associated Weierstrass $\wp$-function is defined by
+    $$\wp(z)=\wp_\Lambda(z)=\frac{1}{z^2}+\sum_{\omega\in\Lambda\setminus\{0\}}\left(\frac{1}{(z-\omega)^2}-\frac{1}{\omega^2}\right)$$
+\end{definition}
+We have A LOT to check.
+\begin{lemma}
+    Let $\Lambda=\langle\omega_1,\omega_2\rangle$ be a lattice in $\mathbb C$ and $t\in\mathbb R$.
+    Then the sum
+    $$\sum_{\omega\in\Lambda\setminus\{0\}}\frac{1}{|\omega|^t}$$
+    converges iff $t>2$.
+\end{lemma}
+\begin{proof}
+    Consider the tilted square (or unit circle in $\ell^1$ metric) $Q=\{(t_1,t_2)\in\mathbb R^2:|t_1|+|t_2|=1\}$.
+    By compactness, the continuous function $Q\to\mathbb R$ via $(t_1,t_2)\to|t_1\omega_1+t_2\omega_2|$ attains its maximum $M$ and minimum $m$ on $Q$.
+    $m\neq 0$ since $\omega_1,\omega_2$ needs to be linearly independent over $\mathbb R$.
+    So $0<m\le t_1\omega_1+t_2\omega_2\le M<\infty$ for any $t_1,t_2\in Q$.
+    Consider $(k,l)\in\mathbb Z^2\setminus\{0\}$ and take
+    $$t_1=\frac{k}{|k|+|l|},t_2=\frac{l}{|k|+|l|}$$
+    Therefore $m(|k|+|l|)\le |k\omega_1+l\omega_2|\le M(|k|+|l|)$, hence the sum we wanted is bounded by positive multiples of
+    $$\sum_{(k,l)\in\mathbb Z^2\setminus\{0\}}\frac{1}{(|k|+|l|)^t}$$
+    So we only need to understand the convergence of this sum.
+    Now for each $n\in\mathbb Z_{>0}$, the equation $n=|k|+|l|$ has exactly $4n$ solutions of $(k,l)\in\mathbb Z^2\setminus\{0\}$, therefore this sum converges iff
+    $$\sum_{n=1}^\infty\frac{4n}{n^t}=4\sum_{n=1}^\infty\frac{1}{n^{t-1}}$$
+    which converges iff $t>2$.
+\end{proof}
+\begin{theorem}
+    $\wp_\Lambda$ is a well-defined elliptic function with $\Lambda$ its set of periods.
+    Moreover, $\wp_\Lambda$ is even and has degree $2$.
+\end{theorem}
+\begin{proof}
+    For convergence, we shall estimate the summands.
+    \begin{align*}
+        \left|\frac{1}{(z-\omega)^2}-\frac{1}{\omega^2} \right|&=\left|\frac{z(2\omega-z)}{\omega^2(z-\omega)^2} \right|\\
+        &=\left|\frac{z}{\omega^2}\right|\left|\frac{2\omega-z}{(z-\omega)^2}\right|\\
+        &\le \left|\frac{z}{\omega^2}\right|\left( \frac{2}{|z-\omega|}+\frac{|z|}{|z-\omega|^2} \right)
+    \end{align*}
+    Fix $R\ge|z|$.
+    For all but finitely many $\omega$, we have $|\omega|\ge 2R$, so $|\omega-z|\ge |\omega|/2\ge R$.
+    So after throwing away finitely many terms,
+    $$\left|\frac{z}{\omega^2}\right|\left( \frac{2}{|z-\omega|}+\frac{|z|}{|z-\omega|^2} \right)\le\frac{R}{|\omega|^2}\left( \frac{2}{|\omega|/2}+\frac{R}{|\omega|R/2} \right)=\frac{6R}{|\omega|^3}$$
+    So the sum converges by the preceding lemma since $3>2$, which means $\wp_\Lambda(z)$ is indeed well-defined and automatically meromorphic.
+    It is clear that it is even.
+    To see it is elliptic, choose $\omega_0\in\Lambda$, we need to show that $\omega_0$ is a period of $\wp_\Lambda$.
+    Now it is clear that $\omega_0$ is a period of
+    $$\wp_\Lambda^\prime(z)=\sum_{\omega\in\Lambda}\frac{-2}{(z-\omega)^3}$$
+    So $f(z)=\wp_\Lambda(z+\omega_0)-\wp_\Lambda(z)$ has zero derivative, hence $f$ is constant.
+    This means that $\wp_\Lambda(z+\omega_0)=\wp_\Lambda(z)+C$ for some constant $C$.
+    But $\wp_\Lambda$ is even, so setting $z=-\omega_0/2$ gives $C=0$ and hence $\omega_0$ is a period, so anything in $\Lambda$ is a period of $\wp_\Lambda$.
+    Also the poles of $\wp_\Lambda$ is exactly $\Lambda$, so the set of periods of $\wp_\lambda$ has to be exactly $\Lambda$.
+    In particular, $\wp_\Lambda$ has a unique pole of order $2$ on $\mathbb C/\Lambda$, so $\deg\wp_\Lambda=2$
+    This completes the proof.
+\end{proof}
+\begin{remark}
+    We now know that:\\
+    (i) $\wp_\Lambda$ is meromorphic with set of periods $\Lambda$.\\
+    (ii) $\wp_\Lambda$ has poles only at $\Lambda$.\\
+    (iii) $\wp_\Lambda(z)-z^{-2}\to 0$ as $z\to 0$.\\
+    Furthermore, these properties uniquely characterised $\wp_\Lambda$ up to a constant.
+\end{remark}

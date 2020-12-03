@@ -1,0 +1,32 @@
+\section{The Valency Theorem; Euler Characteristic; The Riemann-Hurwitz Theorem}
+\subsection{The Valency Theorem}
+We want to relate the branching data of an analytic map and the topology of a compact Riemann surface.
+\begin{theorem}[Valency Theorem]
+    Suppose $f:R\to S$ is a non-constant analytic map between compact Riemann surfaces $R,S$, then the function $n:S\to\mathbb N$ defined by
+    $$n(q)=\sum_{p\in f^{-1}(\{q\})}m_f(p)$$
+    is constant on $S$.
+\end{theorem}
+\begin{proof}
+    By the identity principle, $f^{-1}(\{q\})$ is finite, therefore $n$ is well-defined.
+    As $S$ is connected, it suffices to show that $n$ is locally constant.
+    Let $q_0\in S$ and $f^{-1}(q_0)=\{p_1,\ldots,p_k\}$.
+    Our goal is to find local coordinates about the $p_i$ and $q_0$ such that $f$ is a power map.
+    Let $(\psi,V)$ be a chart about $q_0$ such that $\psi(q_0)=0$, then there exists disjoint charts $(\phi_1,U_1),\ldots,(\phi_k,U_k)$ such that $p_i\in U_i$ and $\psi\circ f\circ\phi_i^{-1}(z)=z^{m_f(p_i)}$.\\
+    Let $U=\bigcup_iU_i$, then $U$ is open, so $R\setminus U$ is closed subset of $R$, hence is compact.
+    So $K=f(R\setminus U)$ is compact and hence closed as $S$ is Hausdorff.
+    Set $V'=V\setminus K$.
+    Now quite obviously $f^{-1}(V')\subset U$.
+    Set $U_i'=U_1\cap f^{-1}(V')$, then $f^{-1}(V')=\bigcup_iU_i'$, then in the charts $(\phi_i,U_i')$ and $(\psi,V')$, $f$ takes the form of power maps, therefore $n(q)=n(q_0)$ for any $q\in V'$.
+\end{proof}
+\begin{definition}
+    This constant $n$ is called the valency or degree $\deg f$ of $f$.
+\end{definition}
+\begin{example}
+    If $f$ is a polynomial, then the degree of $f$ equals the polynomial degree of $f$.
+\end{example}
+\begin{corollary}[Fundamental Theorem of Algebra]
+    Any nonconstant polynomial of degree $d$ has exactly $d$ zeros in $\mathbb C$.
+\end{corollary}
+\begin{proof}
+    Extend it analytically to $\mathbb C_\infty\to\mathbb C_\infty$.
+\end{proof}

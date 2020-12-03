@@ -1,0 +1,24 @@
+\section{Meromorphic Functions; A Worked Example}
+\subsection{Meromorphic Functions}
+Recall that the only analytic maps from a compact Riemann surface to $\mathbb C$ are constants since $\mathbb C$ is not compact.
+Therefore, it is more useful to consider a bigger and compact range, i.e. the Riemann sphere $\mathbb C_\infty$.
+\begin{definition}
+    A meromorphic function on a Riemann surface $R$ is an analytic map $f:R\to\mathbb C_\infty$ that is not constantly $\infty$.
+\end{definition}
+First we do some ground work for consistency.
+\begin{proposition}
+    Let $D\subset\mathbb C$ be a domain and $A\setminus D$ a discrete subset.
+    A function $f:D\to\mathbb C_\infty$ is meromorphic if and only if $f:D\setminus A\to\mathbb C$ is analytic, $f(A)=\{\infty\}$ and $f$ has a pole at each $a\in A$.
+\end{proposition}
+\begin{proof}
+    Quite obvious honestly, but we are gonna go though it.
+    For the ``only if'' direction, let $A=f^{-1}(\{\infty\})$, then $f$ obviously restricts analytically to $\mathbb C$ on $D\setminus A$.
+    It remains to show that each $a\in A$ is a pole.
+    Working in the standard atlas on $\mathbb C_\infty$ and pick that chart about $\infty$.
+    We see that $(f(z))^{-1}=(z-a)^mg(z)$ in a neighbourhood of $a$ where $m\ge 1$ and $g$ is analytic with $g(a)\neq 0$.
+    Then $f(z)=(z-a)^{-m}/g(z)$ on an even small domain where $g$ does not have any root.
+    This shows immediately that $a$ is a pole.\\
+    For the ``if'' direction, then again $f$ is obviously analytic on $D\setminus A$.
+    At each $a\in A$, we know that $f(z)=(z-a)^{-m}h(z)$ on a neighbourhood of $a$ with $h(0)\neq 0$.
+    Restricting to an even smaller domain where $h$ does not have any root, then $1/f(z)=(z-a)^m/h(z)$, so $f$ is analytic at each $a\in A$ as well by checking the standard atlas.
+\end{proof}

@@ -1,0 +1,42 @@
+\section{The Monodromy Group; The Space of Germs}
+\subsection{The Monodromy Group}
+Let $\pi:\tilde{X}\to X$ be a regular covering map.
+Pick a pasepoint $x_0\in X$.
+For any choice of loop $\gamma:[0,1]\to X$ based at $x_0$ (that is $\gamma(0)=\gamma(1)=x_0$), we want to defines a permutation $\sigma_\gamma:\pi^{-1}(\{x_0\})\to\pi^{-1}(\{x_0\})$.
+If you took Algebraic Topology, you should already know about this construction, but we'll do it again.
+\begin{definition}
+    Let $\tilde{x}\in\pi^{-1}(\{x_0\})$ and let $\tilde{\gamma}_{\tilde{x}}$ be the unique lift of $\gamma$ starting at $\tilde{x}$.
+    Then $\pi(\tilde{\gamma}_{\tilde{x}}(1))=\gamma(1)=x_0$, so $\tilde{\gamma}_{\tilde{x}}(1)\in\pi^{-1}(\{x_0\})$.
+    Therefore we define $\sigma_\gamma(\tilde{x})=\tilde{\gamma}_{\tilde{x}}(1)$.
+\end{definition}
+\begin{remark}
+    1. The constant loop corresponds to the identity permutation.\\
+    2. Let $\bar\gamma(t)=\gamma(1-t)$, then obviously $\sigma_{\bar\gamma}=\pi_{\gamma}^{-1}$, which precisely means that $\sigma_\gamma$ is a permutation.\\
+    3. The previous two remarks hints that the set of all $\sigma_\gamma$ makes a subgroup of $\operatorname{Sym}(\pi^{-1}(\{x_0\}))$.
+    We want to realise this group operation in an intuitive way.
+    For $\alpha,\beta$ loops based at $x_0$, define their concatenation to be
+    $$\alpha\cdot\beta=\begin{cases}
+        \alpha(2t)\text{, for $t\in[0,1/2]$}\\
+        \beta(2t-1)\text{, for $t\in[1/2,1]$}
+    \end{cases}$$
+    which is easily seen to be a well-defined loop based at $x_0$.
+    The uniqueness of lifts then implies that
+    $$(\widetilde{\alpha\cdot\beta})_{\tilde{x}_1}=\tilde{\alpha}_{\tilde{x}_1}\cdot\tilde{\beta}_{\tilde{\alpha}_{\tilde{x}_1}(1)}$$
+    Therefore $\sigma_{\alpha\cdot\beta}=\sigma_\beta\sigma_\alpha$.
+\end{remark}
+\begin{definition}
+    The group
+    $$\{\sigma_\gamma|\gamma\text{ loop based at $x_0$}\}\le \operatorname{Sym}(\pi^{-1}(\{x_0\}))$$
+    which is called the monodromy group of $\pi$.
+\end{definition}
+\begin{remark}
+    1. By Theorem \ref{monodromy}, $\alpha\simeq\beta$ implies $\sigma_\alpha=\sigma_\beta$.\\
+    2. One can easily show that the monodromy group is independent of the choice of basepoint (with the path-connectedness assumption, of course).
+\end{remark}
+\begin{example}
+    Recall that $p_k:\mathbb C_\star\to\mathbb C_\star$ sending $z$ to $z^k$ is a regular covering map.
+    Take basepoint $1$, then $\pi^{-1}(\{1\})$ consists of the $k^{th}$ roots of unity $\zeta_k^n=e^{2\pi in/k}$.
+    Let $\gamma(t)=e^{2\pi it}$, then for each $n$, $\tilde{\gamma}_{\zeta_k^n}=\zeta_k^{n+1}$.
+    Therefore $\sigma_\gamma(\zeta_k^n)=\zeta_k^{n+1}$.
+    But it turns out every loop in $\mathbb C_\star$ is homotopic to $\gamma^n$ for some $n\in\mathbb Z$ (Algebraic Topology again!), therefore the monodromy group of $p_k$ is indeed the cyclic group of order $k$.
+\end{example}

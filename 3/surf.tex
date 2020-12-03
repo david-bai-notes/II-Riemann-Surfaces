@@ -1,0 +1,71 @@
+\subsection{Abstract Riemann Surfaces}
+As we have seen previously, when we wanted to treat stuff like $\log$ and $\sqrt[k]{\cdot}$ formally as functions, the most useful way is to obtain a bigger domain that has some topological and analytical characteristics of $\mathbb C$.
+We want to do complex analysis on these ``bigger domains'' which seem to have better properties than just $\mathbb C$.
+This motivated the study of Riemann surfaces.
+\begin{definition}
+    Let $R$ be a topological space.
+    A chart on $R$ is a pair $(\phi,U)$ where $U$ is an open subset of $R$ and $\phi:U\to D$ is a homeomorphism to an open subset of $\mathbb C$.
+    A set of charts $\mathcal A$ is an atlas on $R$ if:\\
+    1.
+    $$\bigcup_{(\phi,U)\in\mathcal A}U=R$$
+    2. For $(\phi_1,U_1),(\phi_2,U_2)\in\mathcal A$ with $U_1\cap U_2\neq\varnothing$,
+    $$\phi_1\circ\phi_2^{-1}=(\phi|_{U_1\cap U_2})\circ (\phi_2|_{U_1\cap U_2})^{-1}$$
+    is analytic on $\phi_2(U_1\cap U_2)$.
+\end{definition}
+This composition $\phi_1\circ\phi_2^{-1}$ is called a transition function.
+\begin{remark}
+    As $(\phi_1\circ\phi_2^{-1})^{-1}=\phi_2\circ\phi_1^{-1}$, the transition function is biholomorphic.
+\end{remark}
+\begin{example}
+    Take $R=\mathbb C$.\\
+    1. $\mathcal A$ consisting of an open cover of $R$ paired with the obvious identity maps is an atlas.\\
+    2. $\mathcal A'$ consisting of an open cover of $R$ paired with $z\mapsto z+1$ is also an atlas.\\
+    3. $\mathcal A\cup\mathcal A'$ is also an atlas!
+\end{example}
+This example motivated an extended definition that ask the atlas to include as much information as possible about the analytic structure of $R$.
+\begin{definition}
+    A conformal structure on $R$ is an atlas $\mathcal A$ on $R$ which is maximal in the sense that if a chart $(\psi,V)$ on $R$ has the property that for any $(\phi,U)\in\mathcal A$ with $U\cap V\neq\varnothing$, the transition function $\phi\circ\psi^{-1}$ is analytic, then $(\psi,V)\in\mathcal A$.
+\end{definition}
+We can define Riemann surface now.
+\begin{definition}
+    A Riemann surface is a pair $(R,\mathcal A)$ where $R$ is a path-connected Hausdorff topological space and $\mathcal A$ is a conformal structure on $R$.
+\end{definition}
+By abuse of notation, we often just write $R$ to denote a Riemann surface when the conformal structure it is equipped with is understood.
+\begin{lemma}
+    Every atlas $\mathcal A$ is contained in a unique conformal structure $\hat{A}$.
+\end{lemma}
+\begin{proof}
+    Make the obvious choice of $\hat{\mathcal A}$ which consists of all charts $(\psi,V)$ on $R$ such that $\psi\circ\phi^{-1}$ is analytic for every $(\phi,U)\in A$.
+    This is necessarily maximal.
+    To see it is an atlas, take $(\psi_1,V_1),(\psi_2,V_2)\in\hat{\mathcal A}$ and arbitrary $p\in V_1\cap V_2$.
+    As $\mathcal A$ is an atlas, there is $(\phi,U)\in\mathcal A$ such that $p\in U$, so
+    $$\psi_1\circ\psi_2^{-1}=(\psi_1\circ\phi^{-1})\circ(\phi\circ\psi_2^{-1})$$
+    It then follows that $\psi_1\circ\psi_2^{-1}$ is analytic at $\psi_2(p)$.
+    As this works for any $p\in V_1\cap V_2$, we get $\psi_1\circ\psi_2^{-1}$ is analytic at $\psi_2(V_1\cap V_2)$, so $\hat{\mathcal A}$ is an atlas, hence a conformal structure.
+    Uniqueness is obvious.
+\end{proof}
+Therefore, we can identify a conformal structure on a Riemann surface just by an atlas defined on it.
+Also for any atlas on a Riemann surface, we can extend it to a conformal structure.
+\begin{example}\label{c_canon}
+    The atlas $\mathcal A$ consisting of an open cover equipped with identity maps extends to a unique conformal structure $\hat{\mathcal A}$ on $\mathbb C$ that makes it a Riemann surface.
+\end{example}
+But this is not the only conformal structure we can define on $\mathbb C$.
+\begin{example}
+    The atlas $\bar{\mathcal A}$ consisting of an open cover with the conjugate map is an atlas, but is quite obviously not contained in $\hat{\mathcal A}$ as in above.
+    This Riemann surface with this alternative conformal structure is denoted by $\bar{\mathbb C}$.
+\end{example}
+\begin{definition}
+    The conformal structure in Example \ref{c_canon} is called the canonical conformal structure on $\mathbb C$.
+\end{definition}
+When we simply talk about $\mathbb C$ as a Riemann surface, we shall always refer to the one equipped with the canonical conformal structure.
+\begin{example}
+    If $R$ is a Riemann surface with conformal structure $\mathcal A$ and $S\subset R$ is open, then
+    $$\{(\phi|_{S\cap U},U\cap S)|(\phi,U)\in\mathcal A\}$$
+    is an atlas on $S$.
+    In particular, any domain $D\subset\mathbb C$ (like $\mathbb C_\star$) can be made a Riemann surface in this way.
+\end{example}
+\begin{example}[Riemann Sphere]
+    By stereographic projection, we have $\mathbb C_\infty=\mathbb C\cup\{\infty\}\cong S^2$.
+    Let $\mathcal A=\{(\operatorname{id},\mathbb C),(\phi,U)\}$ where $U=\mathbb C_\star\cup\{\infty\}$ with $\phi(z)=1/z$.
+    The transition function is $z\mapsto 1/z$ on $\mathbb C_\star$ which is analytic, so $\mathcal A$ is indeed an atlas.
+\end{example}

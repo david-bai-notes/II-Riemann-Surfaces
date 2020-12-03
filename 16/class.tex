@@ -1,0 +1,72 @@
+\subsection{Classification of Riemann Surfaces}
+We roughly classified all Riemann surfaces in the preceding section by viewing them as quotients of their universal covers, which can only be one of $\mathbb C_\infty,\mathbb C,\mathbb D$.
+We say the surface is uniformised by its universal cover.
+For some of these cases, we can do something better.
+\begin{proposition}
+    If a Riemann surface $R$ is uniformised by $\mathbb C_\infty$, then $R$ is conformally equivalent to $\mathbb C_\infty$.
+\end{proposition}
+\begin{proof}
+    Suppose $R=G\backslash\mathbb C_\infty$, then we know that $G$ acts by conformal equivalences $\mathbb C_\infty\to\mathbb C_\infty$.
+    But this is just M\"obius transformations (from Example Sheet).
+    However, any M\"obius transformation has at least one fixed point, but $G$ should act freely, hence necessarily $G$ is trivial and hence $R\cong\mathbb C_\infty$.
+\end{proof}
+What about $\mathbb C$?
+\begin{proposition}
+    If a Riemann surface $R$ is uniformised by $\mathbb C$, i.e. $R\cong G\backslash\mathbb C$, then one of the following holds:\\
+    (i) $G$ is trivial and $R\cong\mathbb C$.\\
+    (ii) $G\cong\mathbb Z$ and $R\cong\mathbb C_\star$.\\
+    (iii) $G\cong\mathbb Z^2$ and $R\cong\mathbb C/\Lambda$ for a lattice $\Lambda$.
+\end{proposition}
+\begin{proof}
+    The conformal automorphisms of $\mathbb C$ are simply the (nonconstant) linear maps $\{z\mapsto az+b:a\in\mathbb C_\star,b\in\mathbb C\}$ (again from Example Sheet).
+    Which of them can $G$ act by?
+    Note that if $a\neq 1$, then $z\mapsto az+b$ has a fixed point, therefore $G$ can only consist of translations.
+    But then (Example Sheet again!) $G$ (identified by the values of $b$) can only be one of:\\
+    (i) Trivial.\\
+    (ii) $\langle\omega\rangle\cong\mathbb Z$ for some $\omega\neq 0$.\\
+    (iii) a lattice $\Lambda\cong\mathbb Z^2$.\\
+    And these corresponds to the three situations as stated.
+\end{proof}
+Oh, by the way, a surface cannot be uniformised by more than one of $\mathbb C_\infty,\mathbb C,\mathbb D$.
+\begin{lemma}[Lifting Lemma]
+    Let $f:R\to S$ be an analytic map of Riemann surfaces.
+    Suppose $R$ is simply connected, and let $\pi:\tilde{S}\to S$ be the uniformising map of $S$, then there is an analytic map $F:R\to\tilde{S}$ such that $f=\pi\circ F$.
+\end{lemma}
+So we have the commutative diagram
+\[
+    \begin{tikzcd}
+        &\tilde{S}\arrow{d}{\pi}\\
+        R\arrow[dashed]{ur}{F}\arrow[swap]{r}{f}&S
+    \end{tikzcd}
+\]
+\begin{proof}
+    Example Sheet.
+\end{proof}
+\begin{proposition}
+    A Riemann surface $R$ is uniformised by at most one of $\mathbb C_\infty,\mathbb C,\mathbb D$.
+\end{proposition}
+\begin{proof}
+    By the previous discussion, we already know everything that is uniformised by $\mathbb C$ or $\mathbb C_\infty$ and they are distinct.
+    Now suppose $R$ is uniformised by $\mathbb D$ and $\tilde{R}$ which is either $\mathbb C$ or $\mathbb C_\infty$.
+    Let $\pi,f$ be the respective uniformisation maps, then by the preceding lemma, there is $F:\tilde{R}\to\mathbb D$ such that
+    \[
+        \begin{tikzcd}
+            &\mathbb D\arrow{d}{\pi}\\
+            \tilde{R}\arrow[swap]{r}{f}\arrow{ur}{F}&R
+        \end{tikzcd}
+    \]
+    commutes.
+    But then $F$ has to be constant by Liouville's Theorem, hence $f$ is also constant, contradiction.
+\end{proof}
+So any other Riemann surface must be uniformised by $\mathbb D$.
+\begin{proposition}
+    Any conformal automorphisms of $\mathbb D$ is in the form
+    $$z\mapsto e^{i\theta}\frac{z-a}{1-\bar{a}z},a\in\mathbb C,\theta\in\mathbb R$$
+\end{proposition}
+\begin{proof}
+    Complex Analysis.
+\end{proof}
+This is perhaps easier to picture if we send $\mathbb D$ to the open upper half plane $\mathbb H$ (by the M\"obius transformation $z\mapsto (1+iz)/(1-iz)$), which has automorphisms in the form $z\mapsto (az+b)/(cz+d)$ for $a,b,c,d\in\mathbb R,ad-bc=1$.
+\begin{definition}
+    A subgroup of $\operatorname{PSL}(\mathbb R)$ that acts properly discontinuously on $\mathbb H$ is called a Fuchsian group.
+\end{definition}

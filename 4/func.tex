@@ -1,0 +1,29 @@
+\subsection{Analytic Functions}
+\begin{definition}
+    An analytic function on a Riemann surface $R$ is an analytic map $R\to\mathbb C$.
+\end{definition}
+We can put analytic functions into a nice form by our study of this structure of Riemann surfaces.
+\begin{theorem}[Inverse Function Theorem]
+    Let $f$ be an analytic function on a domain $S\subset\mathbb C$.
+    If $f^\prime(z_0)\neq 0$ for $z_0\in D$, then there are open neighbourhoods $U$ of $z_0$ and $V$ of $f(z_0)$ such that $f$ restricts to a biholomorphism $U\to V$.
+\end{theorem}
+\begin{proof}
+    Omitted.
+\end{proof}
+\begin{proposition}\label{local_p_k}
+    Let $f$ be a non-constant analytic function on a Riemann surface $R$ and $p\in R$ be a zero of $f$.
+    There is a chart $(\phi,U)$ about $p$ with $\phi(p)=0$ such that $f\circ\phi^{-1}(z)=z^m$ for some integer $m>0$.
+\end{proposition}
+\begin{proof}
+    Let $(\psi,V)$ be a chart with $\psi(p)=0$ as adding a constant does not change anything.
+    $f$ is not globally constant, so it is not locally constant by the identity principle for Riemann surfaces.
+    \footnote{Proved in example sheet.}
+    Therefore is an analytic $g$ in a neighbourhood $W\subset\psi(V)$ of $0$ such that $f\circ\psi^{-1}(z)=z^mg(z)$ with $g(0)\neq 0$.\\
+    But then since $g$ is continuous, there is $\delta>0$ such that $D(0,\delta)\subset W$ and $g(D(0,\delta))\subset D(g(0),|g(0)|)$ does not contain $0$.
+    So there is an analytic branch cut of $\sqrt[m]{\cdot}$ on $g(D(0,\delta))$.
+    Define $h(z)=z\cdot\sqrt[m]{g(z)}$ on $D(0,\delta)$, then $f\circ\psi^{-1}(z)=(h(z))^n$.
+    Differentiating $h$ gives $h^\prime(0)=\sqrt[m]{g(0)}\neq 0$, so $h$ has an analytic inverse on $D(0,\epsilon)$ for some $0<\epsilon\le\delta$.
+    Then $\phi=h\circ\psi$ and $U=\phi^{-1}(D(0,\epsilon))$ gives the required chart as
+    $$f\circ\phi^{-1}(z)=f\circ\psi^{-1}\circ h^{-1}(z)=(h(h^{-1}(z)))^m=z^m$$
+    which is what we wanted.
+\end{proof}

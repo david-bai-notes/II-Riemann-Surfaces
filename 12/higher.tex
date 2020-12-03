@@ -1,0 +1,30 @@
+\subsection{Higher-Genus Surfaces}
+We want to construct Riemann surfaces with genus $n>1$.
+\begin{example}
+    Consider the Fermat curve of degree $d$:
+    $$F_d'=\{(x,y)\in\mathbb C^2:x^d+y^d=1\}$$
+    the understanding of whose rational point, incidentally, is Fermat's Last Theorem.
+    This is obviously not we are interested in here.
+    As usual we want to make it a Riemann surface.
+    The coordinate projection $\pi_x:(x,y)\mapsto x$ has local inverse $\pi_x^{-1}(x_0)=(x_0,\sqrt[d]{1-x_0^d})$ which exists and is continuous in a neighbourhood of any $x_0$ unless $x_0$ is a $d^{th}$ root of unity, i.e. $x=\zeta_d^i$ for some $i$ where $d=\exp(2\pi i/d)$, which happens iff $y_0=0$ (where $(x_0,y_0)\in F_d'$).
+    Symmetrically, $\pi_y$ provides charts on $F_d'\setminus\{(0,\zeta_d^i)\}$.
+    These charts cover everything as the points where $\pi_x$ and $\pi_y$ don't work are distinct.
+    The non-trivial transition functions are $\pi_y\circ\pi_x^{-1}(x)=\sqrt[d]{1-x^d},\pi_x\circ\pi_y^{-1}(y)=\sqrt[d]{1-y^d}$ which are analytic where they need to be.
+    It is quite obvious that $F_d'$ is Hausdorff since it inherits its topology from $\mathbb C^2$.
+    To see it is connected, consider
+    $$D=\mathbb C\setminus\left(\bigcup_{i=1}^d\{t\zeta_d^i:t\ge 1,i\in\{0,\ldots,d-1\}\}\right)$$
+    Now there are well-defined branches of $y=\sqrt[d]{1-x^d}$ in $D$ which can be extend continuously to $\zeta_d^i$.
+    Let $(x_0,y_0)\in F_d'$.
+    Suppose $x_0\in D$, then we can choose a branch of $y(x)=\sqrt[d]{1-x^d}$ such that $y(x_0)=y_0$.
+    Let $\gamma$ be any path in $D$ from $x_0$ to $1$, then $\tilde\gamma(t)=(\gamma(t),y(\gamma(t)))$ is a path joining $(x_0,y_0)$ to $(1,0)$.
+    As for the $d$ rays in $F_d'\setminus D$, we can also find a branch locally near that and join it to something nearby that is in $D$ (possible as $D$ is dense in $\mathbb C$).
+    Therefore $F_d'$ has to be path-connected.
+    Consequently it is indeed a Riemann surface.\\
+    We can compactify by gluing $F_d=F_d'\cup_\Phi F_d''$.
+    The details can be found from example sheet, where we also extend the covering map to a meromorphic $\hat\pi_x:F_d\to\mathbb C_\infty$ with $\deg\hat\pi_d=d$.
+    Also $|\hat\pi_x^{-1}(\infty)|=d$, so $\infty$ is not a ramification point.
+    The ramification points are then $\{(\zeta_d^i,0),i\in\{0,\ldots,d-1\}\}$ and all of them have multiplicity $d$.
+    Riemann-Hurwitz then gives
+    $$2g_{F_d}-2=d(0-2)+d(d-1)\implies g_{F_d}=\frac{(d-1)(d-2)}{2}$$
+\end{example}
+The conclusion is then there does exist Riemann surfaces with arbitrarily large genus.

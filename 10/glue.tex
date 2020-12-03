@@ -1,0 +1,29 @@
+\section{More Gluing; Branching}
+\subsection{A More Detailed Gluing Example}
+We have seen how to glue two copies of $\mathbb C$ to form the Riemann sphere $\mathbb C_\infty$.
+We are gonna try something more interesting:
+The Riemann surface $R$ associated with $w^2=z^3-z$.
+Topologically, we know it is homeomorphic to the torus with $4$ points removed.
+We already know its conformal structure, but we are also interested in the analytic functions on it.
+We want to compactify $R$ by adding $4$ points.
+But we already know (from example sheet) that we can extend $R$ to the Riemann surface $R_1=\{(z,w)\in\mathbb C:w^2=z^3-z\}$, so it remains to compactify $R$ by adding the point $\infty$.
+The idea for this is to perform a change of coordinate sending $\infty$ to a finite point.
+Consider $u=1/z$ and $v=z/w$ (the method to obtain it will be covered in Algebraic Geometry), so $z=1/u$ and $w=z/v=1/{uv}$, so the original equation becomes $u=v^2(1-u^2)$.
+The set $R_2=\{(z,w)\in\mathbb C^2:u=v^2(1-u^2)\}$ is then a Riemann surface where the atlas is defined by the restriction of the projections $\pi,\tau$ to the first and second coordinate.
+One can do some technical work to check that it works and $\pi,\tau$ are analytic functions under this conformal structure.
+We are going to glue $R_1$ and $R_2$ together to get a compact Riemann surface.
+The gluing map is given by $\Phi(z,w)=(u,v)=(1/z,z/w)$ and $\Phi^{-1}(u,v)=(z,w)=(1/u,1/(uv))$ between $S_1=R_1\setminus\{(0,0),(\pm 1,0)\}$ and $S_2=R_1\setminus\{(0,0)\}$.
+These are conformal equivalences as the coordinate functions are holomorphic and the atlases are defined byb coordinate projection.
+Glue them together gives $\hat{R}=R_1\cup_\Phi R_2$ which is connected.
+Before we check that it is Hausdorff, we want to first note that $\hat\pi_1:R_1\to\mathbb C_\infty$ via $(z,w)\mapsto z$ and $\hat{\pi}_2:R_2\to\mathbb C_\infty$ via $(u,v)\mapsto 1/u$ satisfy $\hat\pi_1=\hat\pi_2\circ\Phi$.
+So they define a continuous function $\hat\pi$ on $\hat{R}$ (which is automatically meromorphic once we can show that $\hat{R}$ is Hausdorff hence is a Riemann surface).
+Let $i_1:R_1\to\hat{R}$ and $i_2:R_2\to\hat{R}$ are the respective inclusions, then to see $\hat{R}$ is Hausdorff, it suffices to seperate $\hat{R}\setminus i_2(R_2)=\{i_1(0,0),i_1(\pm 1,0)\}$ from $\hat{R}\setminus i_1(R_1)=\{i_2(0,0)\}$.
+This can be done by simply taking $\hat\pi^{-1}(D(0,2))$ and $\hat\pi^{-1}(\mathbb C_\infty\setminus\bar{D}(0,2))$.\\
+Now to see $\hat{R}$ is compact, we shall prove it is sequential compact.
+Choose a sequence $(p_n)_{n\ge 0}$ in $\hat{R}$.
+Now if we, via restricting to a subsequence, have $|\hat\pi(p_n)|\le M$ for all $n$, then a further subsequence of $\hat\pi(p_n)$ converges to some $z_0$.
+But there are at most two $w_0$ such that $i_1(z_0,w_0)\in\hat{R}$, so $(p_n)$ has a further subsequence that converges to $i_1(z_0,w_0)$ for one of those $w_0$.
+Otherwise $|\hat\pi(p_n)|\to\infty$, but $p_\infty=i_2(0,0)$ is the only point of $\hat{R}$ whose image under $\hat\pi$ is $\infty$, therefore $p_n\to p_\infty$ as $n\to\infty$.
+Either way there is a convergent subsequence, so $\hat{R}$ is sequential compact hence compact.\\
+In summary, we obtained a compact Riemann surface $\hat{R}$ associated with $w^2=z^3-z$.
+Just like $\pi$ extends to a meromorphic function $\hat\pi$, we can extend $g$ to a meromorphic $\hat{g}$ in the same way.

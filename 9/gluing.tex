@@ -1,0 +1,47 @@
+\subsection{Gluing Riemann Surfaces}
+When we were studying the $k^{th}$ roots, we constructed a Riemann surface $R_k$ equipped with analytic $\pi,g$ such that
+\[
+    \begin{tikzcd}
+        R_k\arrow[swap]{dr}{\pi}\arrow{r}{g}&\mathbb C_\star\arrow{d}{p_k}\\
+        &\mathbb C_\star
+    \end{tikzcd}
+\]
+commutes.
+We also observed that this diagram can be compactified by resolving the removable singularities
+\[
+    \begin{tikzcd}
+        \hat{R}_k\arrow[swap]{dr}{\hat\pi}\arrow{r}{\hat{g}}&\mathbb C_\infty\arrow{d}{\hat{p}_k}\\
+        &\mathbb C_\infty
+    \end{tikzcd}
+\]
+How do we do this in general?
+The answer is via gluing.
+\begin{definition}
+    Let $X,Y$ be topological spaces and with subspaces $X'\subset X,Y'\subset Y$ and a homeomorphism $\Phi:X'\to Y'$.
+    The result of gluing $X,Y$ along $\Phi$ is the topological space $Z=(X\sqcup Y)/\sim$ where $\sim$ is the minimal equivalence relation such that $x\sim\Phi(x)$ for all $x\in X'$.
+    It is sometimes denoted by $X\cup_{\Phi}Y$ or $X\cup_{X'}Y$ if the homeomorphism $\Phi$ is understood.
+\end{definition}
+We need to understand how gluing gives rise to a new Riemann surface in the case where $X,Y$ are Riemann surfaces.
+\begin{proposition}
+    Let $R_1,R_2$ be Riemann urfaces and $S_j\in R_j$ are non empty, connected and open subsets and $\Phi:S_1\to S_2$ is a conformal equvalence of Riemann surfaces, then there is a unique conformal stucture on $R=R_1\cup_\Phi R_2$ such that the inclusions $i_j:R_j\to R$ are analytic.
+    In particular, if $R$ is Hausdorff, then it is a Riemann surface.
+\end{proposition}
+\begin{proof}
+    Consider the family of charts $(\phi_j\circ i_j^{-1},i_j(U_j))$ where $(\phi_j,U_j)$ is a chart on $R_j$.
+    The transition functions are then either transition functions of $R_j$ or $\phi_2\circ i_2^{-1}\circ i_1\circ\phi_1^{-1}=\phi_2\circ\Phi\circ\phi_1^{-1}$ which is analytic as $\Phi$ is.
+    This induces a conformal structure on $R$.\\
+    For uniqueness, suppose $(\phi_j,U_j)$ is a chart on $R_j$ and $(\psi,V)$ is a chart in another conformal stucture on $R$ such that the condition holds, then $\psi\circ i_j\circ\phi_j^{-1}$ is analytic since $i_j$ is.
+    This means that $\phi_j\circ i_j^{-1}$ has analytic transition function with all charts
+    So by maximality the two conformal structures are equal.\\
+    It is quite obvious that $R$ is connected.
+    So if we assume further that $R$ is Hausdorff, then $R$ is a Riemann surface.
+\end{proof}
+\begin{example}[Non-example]
+    Take $R_1=R_2=\mathbb C,S_1=S_2=\mathbb C_\star$, then $R=\mathbb C\cup_{\operatorname{id}_{\mathbb C_\star}}\mathbb C$ is not Hausdorff.
+\end{example}
+\begin{example}
+    Let $R_1=R_2=\mathbb C$ and $S_1=S_2=\mathbb C_\star$ and let $\Phi:\mathbb C_\star\to\mathbb C_\star$ be the inversion $z\mapsto 1/z$.
+    Then $R=\mathbb C\cup_\Phi\mathbb C$ is obviously Hausdorff hence is a Riemann surface by the preceding proposition.
+    One can also see easily that $R$ is compact.
+    Easily, one can see that $R$ is exactly the Riemann sphere $\mathbb C_\infty$.
+\end{example}

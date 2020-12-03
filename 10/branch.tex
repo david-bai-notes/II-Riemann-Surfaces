@@ -1,0 +1,39 @@
+\subsection{Branching}
+As observed, when we compactify a surface, something that used to be a covering map no longer has that property.
+\begin{example}
+    The map $p_k:\mathbb C_\star\to\mathbb C_\star$ via $z\mapsto z^k$ is a covering map, but $\hat{p}_k:\mathbb C_\infty\to\mathbb C_\infty$ is not (if $k\ge 2$).
+\end{example}
+\begin{definition}
+    let $f:R\to S$ be analytic.
+    For $p\in R$, recall that we can find charts that put $f$ into a standard local form $\psi\circ f\circ\phi^{-1}(z)=z^n$ near $p$ for some $n\in\mathbb Z_{\ge 0}$ by Proposition \ref{local_p_k}.
+    The integer $n$ does not depend on the choice of charts (as we can alternatively define it to be the size of $f^{-1}(\{f(p)\})$, and is called the multiplicity $m_f(p)$ of $f$ at $p$.
+\end{definition}
+Most points have multiplicity $1$, the remaining ones are especially interesting.
+\begin{definition}
+    If $m_f(p)>1$, then $p$ is called the ramification point of $f$ and $f(p)$ is called a branch point of $f$.
+    In this case, $m_f(p)$ is sometimes also called the ramification index.
+\end{definition}
+\begin{example}
+    The map $\hat{p}_k:\mathbb C_\infty\to\mathbb C_\infty$ via $z\mapsto z^k$ and $0\mapsto 0,\infty\mapsto\infty$.
+    Then the ramification points are $z=0,\infty$ and the branch points are $w=0,\infty$.\\
+    More generally, for polynomials $f:\mathbb C_\infty\to\mathbb C_\infty$, $f(z)=a_dz^d+\cdots+a_0$ ($a_d\neq 0$) for $z\neq\infty$ and $f(\infty)=\infty$, changing the variable $w=1/z$ gives
+    $$\frac{1}{f(z)}=\frac{1}{a_dz^d+\cdots+a_0}=\frac{w^d}{a_d+\cdots+a_0w^d}=w^dg(w)$$
+    where $g$ is (locally) analytic and nonzero, hence $m_\infty(f)=d$.
+\end{example}
+\begin{remark}
+    Let $f:R\to\mathbb C$ be an analytic function, $p\in R$ and $(\phi,U)$ a chart containing $p$.
+    Then
+    $$F(z)=f\circ\phi^{-1}(z)=(z-z_0)^mg(z),z_0=\phi(p)$$
+    where $m=m_f(p)$ by definition.
+    So $F^\prime(z)=(mg(z)+(z-z_0)g^\prime(z))(z-z_0)^{m-1}$.
+    If $m=1$, then $F^\prime(z_0)=g(z_0)\neq 0$.
+    But if $m>1$, then $F^\prime(z_0)=mg(z_0)(z_0-z_0)^{m-1}=0$.
+    Therefore the ramification points are exactly the zeros of $F^\prime$.
+\end{remark}
+\begin{lemma}
+    If $f:R\to S$ and $g:S\to T$ are analytic, then $m_{g\circ f}(p)=m_g(f(p))m_f(p)$ for any $p\in R$.
+\end{lemma}
+\begin{proof}
+    Find the respective local coordinates such that $f$ corresponds to $z\mapsto z^{m_f(p)}$ and $g$ corresponds to $w\mapsto w^{m_g(f(p))}$, then in those local coordinates $g\circ f$ is $z\mapsto(z^{m_f(p)})^{m_g(f(p))}=z^{m_g(f(p))m_f(p)}$.
+    The equality follows.
+\end{proof}

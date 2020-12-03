@@ -1,0 +1,64 @@
+\subsection{The Space of Germs}
+Let $D\subset\mathbb C$ a domain.
+\begin{definition}
+    Let $(f,U)$ and $(g,V)$ be function elements on $D$.
+    For any $z\in U\cap V$, write $(f,U)\equiv_z(g,V)$ if $f,g$ agree on a neighbourhood of $z$.
+\end{definition}
+Easily $\equiv_z$ is an equivalence relation.
+\begin{definition}
+    Let $(f,U)$ be a function element and $z\in U$.
+    The equivalence class of $(f,U)$ under $\equiv_z$ is called the germ of $f$ at $z$ and is denoted by $[f]_z$.
+\end{definition}
+So two germs $[f]_z$ and $[g]_w$ are equal iff $z=w$ and $f=g$ on a neighbourhood of $z=w$.
+We want to study all possible germs on a domain $D$.
+\begin{definition}
+    The space of germ over $D$ is
+    $$\mathcal G=\{[f]_z:z\in D,(f,D)\text{ a function element with $z\in U$}\}$$
+\end{definition}
+Now we defined it as a set, it is natural to endow a topology on it.
+For any function element $(f,U)$ on $D$, let $[f]_U=\{[f]_z:z\in U\}$.
+\begin{lemma}
+    The collection $\{[f]_U\}$ for $U$ open in $D$ is a basis of a topology on $\mathcal G$.
+\end{lemma}
+\begin{proof}
+    Let $(f,U)$ and $(g,V)$ be function elements on $D$.
+    For any $[h]_z\in [f]_U\cap [g]_V$, then $h$ agrees with $f,g$ on a neighbourhood $W$ of $z$, therefore $[h]_W\subset [f]_U\cap[g]_V$.
+\end{proof}
+This is the topology we want.
+\begin{lemma}
+    $\mathcal G$ is Hausdorff.
+\end{lemma}
+\begin{proof}
+    Consider elements of $[f]_z,[g]_z\in\mathcal G$ with $[f]_z\neq [g]_z$.\\
+    If $z\neq w$ then we can choose function elements $(f,U)\in [f]_z,(g,V)\in[g]_w$ such that $U\cap V=\varnothing$, therefore $[f]_U$ and $[g]_V$ are disjoint.\\
+    If $z=w$, then we can choose an open neighbourhood $U$ such that $(f,U)\in[f]_z$ and $(g,U)\in [g]_z$.
+    Unless $[f]_U\cap [g]_U=\varnothing$, there is a germ $[h]_z\subset [f]_U\cap[g]_U$.
+    By the identity principle $f|_U=h|_U=g|_U$, which means $[f]_z=[h]_z=[g]_z$ due to the connectedness of $U$, contradiction.
+\end{proof}
+\begin{definition}
+    Let $\mathcal G$ be the space of germs over a domain $D$.
+    The forgetful map $\pi:\mathcal G\to D$ is defined by $\pi([f]_z)=z$.
+\end{definition}
+\begin{lemma}
+    For each component $G\subset\mathcal G$, the restriction $\pi:G\to D$ is a covering map.
+\end{lemma}
+\begin{proof}
+    Take an open $U\subset D$.
+    Then the pre-image of $U$ has to be
+    $$\pi^{-1}(U)=\bigcup_{(f,V)\text{ function element on }U}[f]_V$$
+    which is open.
+    So $\pi$ is continuous.\\
+    For each open set in the form $[f]_U$, we have
+    $$(\pi|_{[f]_U})^{-1}(z)=[f]_z$$
+    which is a continuous inverse of $\pi|_{[f]_U}$.
+    This shows that $\pi$ is a local homeomorphism, hence a covering map.
+\end{proof}
+Hence, by Lemma \ref{covering_conformal}, $\pi$ induces a well-defined conformal structure on $\mathcal G$ (well, on each of its connected components) such that $\pi$ is analytic.
+Explicitly, the atlas we have in mind consists of charts $(\pi|_{[f]_U},[f]_U)$ across all the function elements $(f,U)$ on $D$.
+\begin{definition}
+    Let $\mathcal G$ be the space of germs on a domain $D$.
+    The evaluation map $\mathcal E:\mathcal G\to\mathbb C$ is defined by $\mathcal E([f]_z)=f(z)$.
+\end{definition}
+In the chart $(\pi|_{[f]_U},[f]_U)$, we have
+$$\mathcal E\circ(\pi|_{[f]_U})^{-1}(z)=\mathcal E([f]_z)=f(z)$$
+Therefore $\mathcal E$ is analytic.

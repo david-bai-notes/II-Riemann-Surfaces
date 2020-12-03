@@ -1,0 +1,29 @@
+\subsection{Euler Characteristic}
+\begin{definition}
+    Let $S$ be a compact Riemann surface.
+    A topological triangle in $S$ is a continuous embedding $\Delta\hookrightarrow S$ where $\Delta$ is a closed (non-degenerate) triangle in the plane $\mathbb R^2$.
+    A triangulation of $S$ is a finite collection of topological triangles $\{\Delta_i\}$ on $S$ such that:\\
+    1. $\bigcup_i\Delta_i=S$.\\
+    2. If $i\neq j$ then $\Delta_i\cap\Delta_j$ is either empty, a common vertex, or a common edge.\\
+    3. Each edge is contained in exactly two triangles.
+\end{definition}
+\begin{definition}
+    The Euler characteristic of a triangulation of $S$ is $\chi=V-E+F$, where $V$ is the number of vertices, $E$ is the number of edges and $F$ is the number of triangles.
+\end{definition}
+\begin{lemma}
+    1. Every compact Riemann surface $S$ has a triangulation.\\
+    2. $\chi$ does not depend on the triangulation we choose.
+\end{lemma}
+\begin{proof}
+    Omitted.
+\end{proof}
+\begin{definition}
+    The Euler characteristic $\chi(S)$ of $S$ is the Euler characteristic of any of its triangulations.
+\end{definition}
+\begin{example}
+    $\chi(\mathbb C_\infty)=4-6+4=2$ by identifying it with a regular tetrahedron.
+    $\chi(\mathbb C/\Lambda)=0$ by attempting to triangulate its representation as a quotient space of $[0,1]^2$.
+\end{example}
+Turns out, every compact Riemann surface is homeomorphic to an $g$-torus $\Sigma_g$ for some $g$.
+Moreover, $\chi(\Sigma_g)=2-2g$.
+Therefore $\chi(S)$ determines a compact Riemann surface $S$ up to homeomorphism.

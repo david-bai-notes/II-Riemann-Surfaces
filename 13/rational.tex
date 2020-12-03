@@ -1,0 +1,26 @@
+\section{Rational and Periodic Functions}
+\subsection{Rational Functions}
+We want to study meromorphic functions in the Riemann sphere, which are simply the rational functions.
+\begin{proposition}
+    Every meromorphic function $f:\mathbb C_\infty\to\mathbb C_\infty$ on the Riemann sphere is a rational function, that is we can write
+    $$f(z)=c\frac{(z-a_1)\cdots (z-a_m)}{(z-b_1)\cdots (z-b_n)}$$
+    for $c,a_i,b_i\in\mathbb C$.
+\end{proposition}
+Given an $f$ in this form, we can assume WLOG that $a_i\neq b_j$ for all $i,j$.
+\begin{proof}
+    The case that $f$ is constant is trivial.
+    Replacing $f\to 1/f$ necessary, then we can assume WLOG that $f(\infty)\neq\infty$.
+    Let $b_1,\ldots,b_{n'}$ be poles of $f$ (there are finitely many as the Riemann sphere is compact).
+    Then by assumption $b_i\neq\infty$ for all $i$.
+    The Laurent series about $b_j$ then has the form
+    $$f(z)=\sum_{l=-k_j}^\infty c_{j,l}(z-b_j)^l,c_{-k_j,j}\neq 0$$
+    then $k_j$ is the order of the pole.
+    Let
+    $$Q_j(z)=\sum_{l=-k_j}^{-1} c_{j,l}(z-b_j)^l$$
+    be the principal part of the series and let
+    $$g(z)=f(z)-\sum_{j=1}^{n'}Q_j(z)$$
+    Then $g$ is entire and has a removable singularity at $\infty$, hence it has to be constant, which means $f$ has to be rational.
+\end{proof}
+\begin{remark}
+    In th proof, $f(\infty)\in\mathbb C$ means $m\le n$, and in this case we have $\deg f=\sum_jk_j=n$, therefore in general the degree of a rational function is $\max\{m,n\}$.
+\end{remark}

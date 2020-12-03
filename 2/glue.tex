@@ -1,0 +1,31 @@
+\subsection{A Gluing Construction}
+In previous parts, we saw that we can make $\log$ is a complete analytic function.
+But we are not entirely satisfied, as it is just a bunch of function elements related together, instead of a genuin function.
+We shall construct a space as a ``bigger domain'' $R$ at which we can realise $\log$ as a geniune function.\\
+The idea is to consider the function elements we defined earlier and glue them together.
+We define
+$$R=\left( \coprod_{n\in\mathbb Z}U_{I(n)} \middle)\right/\sim$$
+where $z_1\in U_{I(m)}$ and $z_2\in U_{I(n)}$ have $z_1\sim z_2$ iff $z_1=z_2$ as elements of $\mathbb C$ and $f_{I(m)}(z_1)=f_{I(n)}(z_2)$.
+We give $R$ the quotient topology.
+One can imagine $R$ as an ``infinite multi-storey carpark'' that spirals up and down.
+\begin{remark}
+    Since $F_{I(m)}\approx F_{I(n)}$ for all $m,n\in\mathbb Z$, it follows that $R$ is path-connected by following the sequence of direct analytic continuations.
+\end{remark}
+Then, with this construction, we can extend all the $f_{I(n)}$ on the $U_{I(n)}$ to a global function $f:R\to\mathbb C$ by $f([z])=f_{I(n)}(z)$ for $z\in U_{I(n)}$.
+\begin{proposition}
+    $f$ is well-defined.
+\end{proposition}
+\begin{proof}
+    Follows directly from our definition of the equivalence relation $\sim$.
+\end{proof}
+Similarly, the natural inclusions $U_{I(n)}\hookrightarrow\mathbb C_\star$ can be extended to a global function $\pi:R\to\mathbb C_\star$ with $\pi([z])=z$.
+One can also easily verify that $\pi$ is well-defined.
+There is a very nice relationship between $f,\pi$ and the usual exponential map.
+Indeed, $\exp\circ f=\pi$, which basically tells us $f$ has basically everything we want from $\log$.\\
+We can use these global functions together.
+Define $\Phi([z])=(\pi([z]),f([z]))$, then $\Phi$ is injective by definition of $\sim$.
+Therefore $R$ is Hausdorff as $\mathbb C^2$ is.
+\begin{remark}
+    $\Phi$ indeed identifies $R$ with the graph $\{(w,z)\in\mathbb C^2:w=\exp(z)\}$.
+    So we can view $R$ alteratively as ``flipping'' the graph of $\exp$.
+\end{remark}

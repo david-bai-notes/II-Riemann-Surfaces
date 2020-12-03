@@ -1,0 +1,26 @@
+\subsection{The Open Mapping Theorem}
+We want to study complex analytic functions $f:R\to\mathbb C$ where $R$ is a Riemann surface.
+The case where $R$ is compact is especially interesting as we can greatly constrain them using the open mapping theorem.
+\begin{theorem}\label{open_mapping}
+    Any non-constant, analytic map of Riemann surfaces $f:R\to S$ is an open map.
+\end{theorem}
+\begin{proof}
+    By the identity principle for Riemann surfaces shows that $f$ is not constant in any open subset.
+    Let $W\subset R$ be open and $p\in W$.
+    Pick charts $(\phi,U)$ containing $p$ and $(\psi,V)$ containing $f(p)$, then by the open mapping theorem on complex plane, $\psi\circ f(U\cap W\cap f^{-1}(V))$ is an open neighbourhood of $\psi\circ f(p)$ in $\psi(f(W)\cap V)$, so $f(U\cap W\cap f^{-1}(V))$ is an open neighbourhood of $f(p)$ in $f(W)$.
+\end{proof}
+\begin{corollary}
+    Let $f:R\to S$ be a non-constant, analytic map of Riemann surfaces.
+    If $R$ is compact, then $f$ is surjective and $S$ is also compact.
+\end{corollary}
+\begin{proof}
+    By Theorem \ref{open_mapping}, $f(R)$ is open.
+    But $R$ is compact, so $f(R)$ is compact, hence $f(R)$ is also closed as $S$ is Hausdorff.
+    But then $S$ is path-connected hence connected, therefore $S=f(R)$ and hence is compact.
+\end{proof}
+\begin{corollary}
+    Every analytic function on a compact Riemann surface is constant.
+\end{corollary}
+\begin{proof}
+    $\mathbb C$ is not compact.
+\end{proof}

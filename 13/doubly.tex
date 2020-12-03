@@ -1,0 +1,35 @@
+\subsection{Doubly Periodic Functions}
+\begin{definition}
+    A meromorphic function $f$ on $\mathbb C$ whose period contains $\langle\omega_1\rangle\oplus\langle\omega_2\rangle\cong\mathbb Z^2$ is said to be doubly periodic or elliptic.
+\end{definition}
+In this case, $\Omega$ is a lattice $\Lambda$, so $f$ depends on a meromorphic function on $\mathbb C/\Lambda$.
+\begin{proposition}
+    If $f$ is a meromorphic function on $\mathbb C$ and the periods of $f$ contain a lattice $\Lambda$, then there is a unique meromorphic function $\bar{f}$ on the complex torus $\mathbb C/\Lambda$ such that $f(z)=\bar{f}\circ\pi(z)$ where $\pi:\mathbb C\to\mathbb C/\Lambda$ is the quotient map.
+\end{proposition}
+\begin{proof}
+    Same as Proposition \ref{simply_periodic} by observing that $\pi$, as a covering map, admits a local analytic inverse.
+\end{proof}
+So the elliptic functions on $\mathbb C$ with $\Lambda\subset\Omega$ corresponds to meromorphic functions on $\mathbb C/\Lambda$.
+This means that we can apply our study in compact Riemann surfaces in doubly periodic functions.
+\begin{corollary}
+    There is no doubly periodic analytic functions on $\mathbb C$ other than constant maps.
+\end{corollary}
+\begin{proof}
+    Immediate.
+\end{proof}
+Also, since we can view a doubly periodic function $f$ as an analytic maps $\bar{f}$ in the compact surface $\mathbb C/\Lambda$, we can make sense of its degree by writing $\deg f=\deg\bar{f}$.
+\begin{corollary}\label{degree_doubly_periodic}
+    If $f:\mathbb C\to\mathbb C_\infty$ is doubly periodic and non-constant, then $\deg f\ge 2$.
+\end{corollary}
+\begin{proof}
+    If $\deg f=1$, then $f$ is unramified so Riemann-Hurwitz gives $0=1(-2)+0=-2$, contradiction.
+\end{proof}
+For a lattice $\Lambda=\langle\omega_1,\omega_2\rangle$, we construct the period parallelogram as the parallogram $P$ with vertices $z_0,z_0+\omega_1,z_0+\omega_2,z_0+\omega_1\omega_2$ for some fixed $z_0\in\mathbb C$ (usually $0$).
+So $f$ is determined by its value on $P$.
+\begin{proof}[Alternative proof of Corollary \ref{degree_doubly_periodic}]
+    Choose $z_0$ so that no zeros nor poles of $f$ lie on $\partial P$, which is possible as $\mathbb C/\Lambda$ is compact.
+    The residue theorem gives
+    $$\sum_{z\text{ pole in }P}\operatorname{res}_z(f)=\frac{1}{2\pi i}\int_{\partial P}f(z)\,\mathrm dz=0$$
+    by the periodicity of $f$.
+    Hence either $f$ is no pole, which means $f$ is constant, or $f$ has at least two poles (counted with multiplicity), so $\deg f\ge 2$.
+\end{proof}
